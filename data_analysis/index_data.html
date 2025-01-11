@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Tonnage data</title>
-    </head>
-    <body>
-        <h1>Complete with data analysis</h1>
-        <a href='../index.html'>Go to the main page</a>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonnage data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .graph {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .graph img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Graph Gallery</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="index_data.html">Graphs</a>
+</nav>
+
+<main>
+    <div class="container">
+        <div class="graph">
+            <h2>Graph 1</h2>
+            <img src="graph1.jpg" alt="Graph 1 Description">
+        </div>
+        <div class="graph">
+            <h2>Graph 2</h2>
+            <img src="graph2.jpg" alt="Graph 2 Description">
+        </div>
+        <div class="graph">
+            <h2>Graph 3</h2>
+            <img src="graph3.jpg" alt="Graph 3 Description">
+        </div>
+        <!-- Add more graphs as needed -->
+    </div>
+</main>
+
+<footer>
+    <p style="text-align: center;">&copy; 2025 Your Name</p>
+</footer>
+
+</body>
 </html>
