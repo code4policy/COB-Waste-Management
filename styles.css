@@ -13,11 +13,10 @@ header {
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 10px;
 }
 
-header img {
+.logo {
     height: 50px;
 }
 
