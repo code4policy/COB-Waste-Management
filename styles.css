@@ -1,6 +1,7 @@
 html {
   font-size: 10px; 
   font-family: "Montserrat", sans-serif; 
+  background-color: #FFFFFF;
 }
 
 body {
@@ -16,6 +17,18 @@ header {
     padding: 10px;
 }
 
+.navigation {
+    background-color: #FFFFFF;
+    color: #091F2F;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    font-size: 2rem;
+}
+
 .logo {
     height: 50px;
 }
@@ -23,12 +36,29 @@ header {
 nav {
     text-align: center;
     margin: 1rem 0;
+    text-align: center;
+    display: flex;
 }
 nav a {
     margin: 0 1rem;
     text-decoration: none;
-    color: #4CAF50;
+    color: #091F2F;
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
+
+nav a:hover {
+    color: #D22D23;
+}
+
+nav a.active {
+    color: #D22D23;
+    font-weight: bold; /* Optional: Makes the active link stand out */
+}
+
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
