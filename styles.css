@@ -81,7 +81,6 @@ nav a.active {
 .info-box {
     background-color: #0e1123; 
     color: #ffffff; 
-    text-align: center; /* Center text inside the box */
     padding: 2rem; /* Space inside the box */
     border-radius: 15px; /* Rounded corners */
     width: 20%;
@@ -94,13 +93,16 @@ nav a.active {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    text-align: center; /* Center text inside the box */
 }
 
 /* Paragraph styling */
 .info-box p {
     font-size: 1.2rem;
     margin: 0.5rem 0;
+    text-align: left; 
 }
+
 
 /* Highlighted percentage */
 .info-box .highlight {
@@ -118,8 +120,8 @@ nav a.active {
 }
 
 
-/*For the waste box*/
-.waste-box {
+/*For the waste and district box*/
+.waste-box, .district-box, .seasonal-box {
     background-color: #ffffff;
     color: #000000; 
     text-align: center;
@@ -140,12 +142,45 @@ nav a.active {
     color: #000000;
 }
 
+/* Percentage styling */
+#percentage {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    position: relative;
+    color: #FB4D42;
+}
+
 /* Waste categories container */
 .waste-categories {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
+}
+
+/* Waste Diversion container */
+.waste-diversion {
+    display: flex;
+    border-radius: 15px; /* Rounded corners */
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    background-color: #FB4D42;
+    font-weight: bold;
+    color:white;
+}
+
+/* Dropbox */
+.dropdown-wrapper {
+  display: flex; 
+  gap: 10px; 
+  align-items: center; /* Align dropdowns and labels vertically */
+}
+
+select {
+  width: 80px;
+  padding: 5px;
+  font-size: 10px;
 }
 
 /* Each category link */
@@ -171,7 +206,7 @@ nav a.active {
 /* Divider lines between categories */
 .divider {
     width: 2px;
-    height: 50px;
+    height: 120px;
     background-color:  #091F2F;
 }
 

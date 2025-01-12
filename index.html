@@ -55,44 +55,54 @@
 </main>
 
 <div class="info-box">
-    <h2>TOWARDS ZERO WASTE</h2>
-    <p>: INCREASE TRASH DIVERSION BY <span class="highlight">5%</span></p>
-    <a href="goals.html" class="link">CLICK</a> TO LEARN MORE ABOUT OUR GOALS!
+    <h2>TEAM ZERO WASTE GOALS FOR 2025</h2>
+    <ul> 
+    <li>increase <span class="highlight">trash diversion by 5%</span></li>
+    <p> </p>
+    <li>develop metrics to identify gaps in our current waste management systems, focusing on:
+        <p> </p>
+        <ol>
+            <li> <span class="highlight"> District/Neighborhood Trends</span></li>
+            <li> <span class="highlight"> Seasonal Trends</span></li>
+            <li> Key Perormance Indicators (KPIs)</li>
+            <li> Existing Local & State Policy</li>
+        </ol>
+    </ul>
 </div>
 
 
+<!-- Monthly waste diversion Section -->
 <div class="waste-box">
-    <h2>MONTHLY WASTE TRACKER</h2>
+    <h2>MONTHLY WASTE DIVERSION</h2>
     <p class="info-text">
-        HOW CLOSE ARE WE TO ACHEIVING THE TARGET? <br>
-        SELECT YEAR AND MONTH  <br>
-        TO CHECKOUT OUR RECENT PROGRESS.
+        SELECT YEAR AND MONTH  TO CHECKOUT OUR RECENT PROGRESS<br>
+        IN ACHEIVING THE TRASH DIVERSION GOALS
     </p>
     <div class="dropdown-container">
         <label for="year">YEAR:</label>
         <select id="year">
           <option value="2024">2024</option>
         </select>
-    <div class="dropdown-container">
         <label for="month">MONTH:</label>
         <select id="month">
          <option value="MAY">MAY</option>
         </select>
+    </div>
     <div class="waste-categories">
         <!-- Recycling Section -->
         <a href="#recycling" class="category">
             <img src="recycle-solid-blue.svg" alt="Recycling">
             <h4>RECYCLING</h4>
             <p> 2,977 tons </p>
-            <p> 33.1% </p>
+            <p id="percentage"> 33.1% </p>
         </a>
         <span class="divider"></span>
         <!-- Trash Section -->
         <a href="#trash" class="category">
             <img src="trash-solid-blue.svg" alt="Trash">
-            <h4 class="highlight">TRASH</h4>
+            <h4>TRASH</h4>
             <p> 5,827 tons </p>
-            <p> 64.9% </p>
+            <p id="percentage"> 64.9% </p>
         </a>
         <span class="divider"></span>
         <!-- Compost Section -->
@@ -100,14 +110,34 @@
             <img src="compostable-blue.png" alt="Compost">
             <h4>COMPOST</h4>
             <p> 178 tons </p>
-            <p> 2.0% </p>
+            <p id="percentage"> 2.0% </p>
         </a>
     </div>
+    <div class="waste-diversion">
+        <p> RATE OF MONTHLY WASTE DIVERSION ATTAINED : 35.1% </p>           
+    </div>
+</div>
 
-    <div class="Goal">
-   
-        </a>
-            
+<!-- District level data Section -->
+<div class="district-box">
+    <h2>DISTRICT LEVEL DATA</h2>
+    <p class="info-text">
+        SELECT YEAR TO CHECKOUT DISTRICT LEVEL DATA
+    </p>
+    <div class="dropdown-container">
+        <label for="year">YEAR:</label>
+        <select id="year">
+          <option value="2024">2024</option>
+        </select>
+    </div>
+</div>
+
+<!-- Season Data section -->
+<div class="seasonal-box">
+    <h2>SEASONAL DATA</h2>
+    <p class="info-text">
+        SELECT YEAR TO CHECKOUT THE PROGRESS OF EACH DISTRICT
+    </p>
 </div>
 
 
