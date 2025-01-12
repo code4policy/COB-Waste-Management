@@ -66,7 +66,7 @@ nav a.active {
     padding: 20px;
 }
 .graph {
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     padding: 10px;
     text-align: center;
     background-color: #f9f9f9;
@@ -190,4 +190,30 @@ nav a.active {
 }
 .info-text .link:hover {
     color: #D22D23;
+}
+
+/* General layout for the dashboard */
+.dashboard {
+    display: flex; /* Flexbox to arrange graphs and boxes side by side */
+    gap: 2rem; /* Space between graphs and boxes */
+    padding: 2rem;
+    max-width: 1200px; /* Restrict the total width */
+    margin: 0 auto; /* Center the dashboard on the page */
+}
+
+/* Left side: Graphs */
+.graphs {
+    flex: 2; /* Takes up more space compared to the right side */
+    display: flex;
+    flex-direction: column; /* Stack graphs vertically */
+    gap: 1rem; /* Space between graphs */
+}
+
+
+/* Right side: Boxes */
+.boxes {
+    flex: 1; /* Takes up less space compared to the left side */
+    display: flex;
+    flex-direction: column; /* Stack the boxes vertically */
+    gap: 1rem; /* Space between the boxes */
 }
