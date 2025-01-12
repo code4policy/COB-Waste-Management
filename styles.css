@@ -76,3 +76,43 @@ nav a.active {
     max-width: 100%;
     height: auto;
 }
+
+/* General styling for the box */
+.info-box {
+    background-color: #0e1123; 
+    color: #ffffff; 
+    text-align: center; /* Center text inside the box */
+    padding: 2rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    width: 20%;
+    margin: 2rem auto; /* Center the box on the page */
+}
+
+/* Title styling */
+.info-box h2 {
+    color: #e74c3c; 
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Paragraph styling */
+.info-box p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Highlighted percentage */
+.info-box .highlight {
+    color: #e74c3c; 
+    font-weight: bold;
+}
+
+/* Link styling */
+.info-box .link {
+    color: #e74c3c; 
+    text-decoration: underline; 
+    font-weight: bold;
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 0.5rem; /* Space between "CLICK" and the rest of the text */
+}
