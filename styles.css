@@ -71,7 +71,7 @@ nav a.active {
 
 /* For the Towards zero waste box*/
 .info-box {
-    background-color: #0e1123; 
+    background-color: #091F2F; 
     color: #ffffff; 
     padding: 2rem; /* Space inside the box */
     border-radius: 15px; /* Rounded corners */
@@ -81,16 +81,16 @@ nav a.active {
 
 /* Title styling */
 .info-box h2 {
-    color: #e74c3c; 
-    font-size: 1.5rem;
+    color: #D22D23; 
+    font-size: 3rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
     text-align: center; /* Center text inside the box */
 }
 
 /* Paragraph styling */
-.info-box p {
-    font-size: 1.2rem;
+.info-box ul {
+    font-size: 2rem;
     margin: 0.5rem 0;
     text-align: left; 
 }
@@ -98,17 +98,8 @@ nav a.active {
 
 /* Highlighted percentage */
 .info-box .highlight {
-    color: #e74c3c; 
+    color: #D22D23; 
     font-weight: bold;
-}
-
-/* Link styling */
-.info-box .link {
-    color: #e74c3c; 
-    text-decoration: underline; 
-    font-weight: bold;
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-right: 0.5rem; /* Space between "CLICK" and the rest of the text */
 }
 
 
