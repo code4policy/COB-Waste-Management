@@ -8,13 +8,21 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
     background-color: #091F2F;
     color: white;
-    text-align: center;
     display: flex;
     align-items: center;
     padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem; /* Adjust size to your preference */
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
 }
 
 .navigation {
@@ -38,6 +46,8 @@ nav {
     margin: 1rem 0;
     text-align: center;
     display: flex;
+    align-items: center; 
+    justify-content: center;
 }
 nav a {
     margin: 0 1rem;
@@ -47,6 +57,7 @@ nav a {
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 nav a:hover {
