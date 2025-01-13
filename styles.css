@@ -198,13 +198,6 @@ select {
 }
 
 
-/* Divider lines between categories */
-.divider {
-    width: 2px;
-    height: 120px;
-    background-color:  #091F2F;
-}
-
 /* Additional info text */
 .info-text {
     margin-top: 1rem;
@@ -247,13 +240,4 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-
-/* Right side: Boxes */
-.boxes {
-    flex: 1; /* Takes up less space compared to the left side */
-    display: flex;
-    flex-direction: column; /* Stack the boxes vertically */
-    gap: 1rem; 
 }
