@@ -14,14 +14,19 @@ const svg = d3.select("svg")
 const tooltip = d3.select(".tooltip");
 
 // Current variable being displayed
-let currentVariable = "Trash tonnage";
+let currentVariable = "Trash tonnage (per 1,000 people)";
 
 // Load the data
-d3.csv("data.csv").then(data => {
+d3.csv("./data_analysis/data.csv").then(data => {
   // Parse data
   data.forEach(d => {
     d.Year = +d.Year;
-    d.Value = +d.Value;
+    // Check for invalid percentage values like #DIV/0! or NaN
+    if (d.Value === '#DIV/0!' || isNaN(d.Value)) {
+      d.Value = null;  // Set to null or any other value you prefer
+    } else {
+      d.Value = +d.Value;
+    }
   });
 
   // Group data by district and variable
@@ -29,20 +34,19 @@ d3.csv("data.csv").then(data => {
 
   // Create scales
   const xScale = d3.scaleLinear()
-    .domain(d3.extent(data, d => d.Year))
+    .domain([2020, 2024]) // Years
     .range([0, width]);
 
   const yScale = d3.scaleLinear()
-    .range([height, 0]);
+    .range([height, 0]); // y starts at the bottom
 
   const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
-  // Axes
-  const xAxis = d3.axisBottom(xScale).ticks(data.length / groupedData.size);
-  const yAxis = d3.axisLeft(yScale);
-
+  // Append x-axis group
   const xAxisGroup = svg.append("g")
     .attr("transform", `translate(0, ${height})`);
+
+  // Append y-axis group
   const yAxisGroup = svg.append("g");
 
   // Line generator
@@ -58,14 +62,15 @@ d3.csv("data.csv").then(data => {
     }));
 
     // Update scales
+    // For "per 1,000 people", set the domain accordingly
     yScale.domain([
       0,
       d3.max(filteredData.flatMap(d => d.values), d => d.Value),
     ]);
 
     // Update axes
-    xAxisGroup.call(xAxis);
-    yAxisGroup.call(yAxis);
+    xAxisGroup.call(d3.axisBottom(xScale).ticks(5).tickFormat(d3.format("d")));
+    yAxisGroup.call(d3.axisLeft(yScale));
 
     // Bind data to lines
     const lines = svg.selectAll(".line")
@@ -99,11 +104,4 @@ d3.csv("data.csv").then(data => {
 
   // Initial render
   updateChart(currentVariable);
-
-  // Toggle button event listener
-  d3.select("#toggleButton").on("click", () => {
-    currentVariable = currentVariable === "Trash tonnage" ? "Trash tonnage (% change)" : "Trash tonnage";
-    d3.select("#toggleButton").text(`Switch to ${currentVariable === "Trash tonnage" ? "% Change" : "Trash tonnage"}`);
-    updateChart(currentVariable);
-  });
 });
