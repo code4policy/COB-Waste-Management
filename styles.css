@@ -266,10 +266,11 @@ select {
     margin: 0 10px; /* Add spacing around it */
     vertical-align: middle; /* Align it with the images */
     color: #000;
+
 } /* Set the color if needed */
 .grey-box {
+    color: #0e1123;
     width: 80%; /* Set default width relative to its parent */
-    max-width: 400px; /* Limit maximum width */
     background-color:#e7e8eb;
     display: flex;
     text-align: center;
@@ -337,3 +338,69 @@ canvas { /* for the graph */
     position: relative;
     color: #FB4D42;
 }
+
+
+/* Styling for goal-html */
+
+.goal-box {
+    max-width: 1500px;
+    background-color: #091F2F; 
+    color: #ffffff; 
+    padding: 1rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    width: 100%;
+    text-align: center;
+    margin: 2rem auto; /* Center the box on the page */
+}
+
+.goal-intro {
+    color: #D22D23;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.goal-intro h2 {
+    color: #D22D23; 
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-align: center; /* Center text inside the box */
+}
+
+.goal-intro h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0.2rem 0;
+    text-align: center;
+    font-weight:normal;
+    margin-bottom: 15px;
+}
+
+.goal-intro h4 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.goal-intro p{
+    color: white;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.notes {
+    text-align: center;
+}
+
+.notes p {
+    color: #091F2F;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.notes #highlight {
+    font-weight: bold;}
+
