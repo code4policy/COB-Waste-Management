@@ -221,7 +221,7 @@ select {
 }
 
 /* Left side: Graphs */
-.graphs {
+#graph-diversion {
     display: grid;
     grid-template-columns: repeat(2, 50%); /* Two columns */
     display: flex;
@@ -244,10 +244,7 @@ select {
     align-items: center;
 }
 
-
-/* Layout for index-diversion.html */
-
-.waste-box, .district-box, .seasonal-box {
+.waste-box {
     background-color: #ffffff;
     color: #000000; 
     text-align: center;
