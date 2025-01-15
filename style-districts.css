@@ -71,6 +71,14 @@ svg {
   color: #091f2f;
   justify-content: left;
   text-align: left;
+  font-size: 18px;
+}
+
+.district-box p {
+  color: #091f2f;
+  justify-content: left;
+  text-align: left;
+  font-size: 12px;
 }
 
 .info-text {
@@ -142,12 +150,16 @@ svg {
 
 .bar-chart-container {
     margin-top: 2rem;
-    width: 100%;
+    width: 100 %;
     text-align: center;
 }
 
 #barChart {
     margin-top: 1rem;
+    background-color: transparent;
+    border: transparent;
+    align-items: center;
+    justify-content: center;
 }
 
 .chart-container {
@@ -155,4 +167,14 @@ svg {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem; /* Add space below chart-info */
+}
+
+/* Bar Styling */
+.bar {
+  transition: all 0.3s ease;
+}
+
+/* Add hover effect to bars for interactivity */
+.bar:hover {
+  opacity: 0.7;
 }
