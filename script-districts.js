@@ -11,7 +11,13 @@ const svg = d3.select("svg")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Tooltip
-const tooltip = d3.select(".tooltip");
+const tooltip = d3.select(".tooltip")
+  .style("position", "absolute")
+  .style("visibility", "hidden") // Make sure the tooltip is hidden initially
+  .style("background-color", "white")
+  .style("border", "1px solid #ddd")
+  .style("padding", "5px")
+  .style("border-radius", "3px");
 
 // Current variable being displayed
 let currentVariable = "Trash tonnage (per 1,000 people)";
@@ -21,12 +27,7 @@ d3.csv("./data_analysis/data.csv").then(data => {
   // Parse data
   data.forEach(d => {
     d.Year = +d.Year;
-    // Check for invalid percentage values like #DIV/0! or NaN
-    if (d.Value === '#DIV/0!' || isNaN(d.Value)) {
-      d.Value = null;  // Set to null or any other value you prefer
-    } else {
-      d.Value = +d.Value;
-    }
+    d.Value = +d.Value;
   });
 
   // Group data by district and variable
@@ -62,7 +63,6 @@ d3.csv("./data_analysis/data.csv").then(data => {
     }));
 
     // Update scales
-    // For "per 1,000 people", set the domain accordingly
     yScale.domain([
       0,
       d3.max(filteredData.flatMap(d => d.values), d => d.Value),
@@ -70,7 +70,22 @@ d3.csv("./data_analysis/data.csv").then(data => {
 
     // Update axes
     xAxisGroup.call(d3.axisBottom(xScale).ticks(5).tickFormat(d3.format("d")));
-    yAxisGroup.call(d3.axisLeft(yScale));
+    yAxisGroup.call(d3.axisLeft(yScale).tickFormat(d3.format(".0f")))
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", -margin.left + 20)
+    .attr("x", -height / 2)
+    .style("text-anchor", "middle")
+    .text("Tonns per thousand people");
+
+    // Define district color map
+  const districtColorMap = {
+    "Charlestown, Downtown Boston, and Roxbury": "#FB4D42",  // Red
+    "Jamaica Plain and Brighton": "#091f2f",  // Dark blue
+    "North and South Dorchester": "#288BE4",  // Blue
+    "East and South Boston": "#45789C",  // Light blue
+    "West Roxbury and Hyde Park": "#D2D2D2"   // Light gray
+  };
 
     // Bind data to lines
     const lines = svg.selectAll(".line")
@@ -82,21 +97,22 @@ d3.csv("./data_analysis/data.csv").then(data => {
       .attr("class", "line")
       .attr("fill", "none")
       .attr("stroke", d => colorScale(d.district))
+      .attr("stroke-width", 3)
       .merge(lines)
       .attr("d", d => line(d.values))
       .on("mouseover", (event, d) => {
-        tooltip.style("display", "block")
-          .html(`District: ${d.district}<br>Year: ${d.values[0].Year}<br>Value: ${d.values[0].Value}`)
-          .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 20}px`);
-      })
-      .on("mousemove", event => {
-        tooltip.style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 20}px`);
-      })
-      .on("mouseout", () => {
-        tooltip.style("display", "none");
-      });
+      tooltip.style("visibility", "visible")  // Make tooltip visible
+        .html(`District: ${d.district}<br>Year: ${d.values[0].Year}<br>Value: ${d.values[0].Value}`)
+        .style("left", `${event.pageX + 10}px`)
+        .style("top", `${event.pageY - 20}px`);
+    })
+    .on("mousemove", event => {
+      tooltip.style("left", `${event.pageX + 10}px`)
+        .style("top", `${event.pageY - 20}px`);
+    })
+    .on("mouseout", () => {
+      tooltip.style("visibility", "hidden");  // Hide tooltip on mouseout
+    });
 
     // Exit old lines
     lines.exit().remove();
