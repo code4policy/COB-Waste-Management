@@ -69,4 +69,11 @@ svg {
 
 .district-box h2 {
   color: #091f2f;
+  justify-content: left;
+  text-align: left;
 }
+
+.info-text {
+  text-align: left;
+}
+
