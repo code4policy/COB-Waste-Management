@@ -6,6 +6,7 @@
     <link href="../styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat"
     rel="stylesheet" />
+    <link href="style-districts.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="../favicon.PNG">
     <title>ZERO WASTE BOSTON</title>
 </head>
@@ -14,36 +15,39 @@
 <header>
     <img src="logo-white_red.png" alt="Logo" class="logo">
     <h1>ZERO WASTE BOSTON </h1>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </header>
 
-<nav>
-    <a href="../index.html">Data</a>
-    <a href="target/target.html">Team Zero Waste Goals for 2025</a>
-    <a href="districts.html">Test</a>
-</nav>
 
 
 <div class="dashboard">
-    <div class="graphs">
-    <div class="graph-container">
-        <h2>Trends in waste disposal </h2>
-        <h3>Annual tonnage by category (Thousands of tons)</h3>
-        <img src="data_analysis/time-series.png" alt="Time series of tonnage" class="graph">
-    </div>
-     <div class="graph-container">
-        <h2>Trends in waste disposal: How is the compost program performing?</h2>
-        <h3>Annual Compost Tonnage (Thousands of tons)</h3>
-        <img src="data_analysis/compost.png" alt="Compost" class="graph">
-    </div>
-    <div class="graph-container">
-        <h2>Effectiveness of waste reduction</h2>
-        <h3>Annual Diversion Rate (Recycling and Compost / Total Volume)</h3>
-        <img src="data_analysis/diversion-rate.png" alt="Diversion rate" class="graph">
-    </div>
-</div>    
+    <div class="district-box">
+        <h2>Which districts generate the most trash per capita?</h2>
+        <p class="info-text">
+            Annual trash disposal by district (tonns per thousands people)
+        </p>
+        <div class="chart-container">
+            <svg width="500" height="500"></svg>
+            <div class="chart-info">
+                <h3>OUR GOAL</h3>
+                <h4>The City of Boston has committed to reduce municipal solid waste generation per capita by at least 15% by 2030 compared to 2015.</h4>
+                <p>How is the city performing?</p>
+                <div class="chart-text">
+                    <!-- Dynamic message will be inserted here -->
+                </div>
+                <div class="bar-chart-container">
+            <h3>Relative Change in Waste Per Capita</h3>
+            <svg id="barChart" width="300" height="300"></svg>
+        </div>
+            </div>
 
-<!-- <footer>
-    <p style="text-align: center;">&copy; 2025 Your Name</p>
-</footer> -->
+        </div>
+
+        <div class="tooltip"></div>
+    </div>
+</div>
+<script src="script-districts.js"></script>
+<script src="per_capita.js"></script>    
 </body>
+
 </html>
