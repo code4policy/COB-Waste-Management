@@ -1,6 +1,6 @@
 // Dimensions and margins
-const margin = { top: 20, right: 50, bottom: 50, left: 70 };
-const width = 900 - margin.left - margin.right;
+const margin = { top: 20, right: 150, bottom: 50, left: 70 };
+const width =  700 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 
 // Create the SVG canvas
@@ -132,17 +132,37 @@ d3.csv("./data_analysis/data.csv").then(data => {
      // Add labels to lines
     lines.enter().append("text")
       .attr("class", "label")
-      .attr("x", d => xScale(d.values[d.values.length - 1].Year)) // Position at the last year
-      .attr("y", d => yScale(d.values[d.values.length - 1].Value)) // Position at the last value
-      .attr("dy", -5) // Position slightly above the line
+      .attr("x", d => xScale(d.values[d.values.length - 1].Year))
+      .attr("y", d => yScale(d.values[d.values.length - 1].Value))
+      .attr("dy", -5)
       .attr("text-anchor", "start")
       .style("fill", d => districtColorMap[d.district])
-      .style("font-size", "12px")
-      .text(d => d.district); // Add district name as label 
-    // Exit old lines
+      .style("font-size", "10px")
+      .text(d => d.district);
+
+    // Exit old lines and labels
     lines.exit().remove();
   }
 
   // Initial render
-  updateChart(currentVariable);
+  updateChart("Trash tonnage (per 1,000 people)");
+
+  // Create legend inside the graph at the top-right corner, with vertical arrangement
+  const legend = svg.append("g")
+    .attr("transform", `translate(${width - 100},20)`);  // Position the legend inside
+
+  const districts = Array.from(districtColorMap.keys());
+  districts.forEach((district, index) => {
+    legend.append("circle")
+      .attr("cx", 0)
+      .attr("cy", index * 30)  // Spacing out the circles vertically
+      .attr("r", 6)
+      .style("fill", districtColorMap[district]);
+
+    legend.append("text")
+      .attr("x", 10)
+      .attr("y", index * 30 + 5)  // Align the text vertically with the circles
+      .style("font-size", "10px")
+      .text(district);
+  });
 });
