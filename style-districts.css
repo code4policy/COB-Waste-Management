@@ -82,16 +82,18 @@ svg {
   justify-content: space-between; /* Space out the chart and text */
   align-items: center; /* Align items vertically */
   margin-top: 1rem; /* Add spacing above */
+  gap: 3rem;
 }
 
 svg {
-  flex: 1; /* Allow the chart to take up most of the space */
+  flex: 2; /* Allow the chart to take up most of the space */
   max-width: 60%; /* Limit its width */
 }
 
 .chart-text {
   flex: 1; /* Allow the text to take up remaining space */
-  padding-left: 1rem; /* Add spacing between the chart and text */
+  padding-left: 2rem; /* Add spacing between the chart and text */
   font-size: 12px;
   text-align: left;
+  background-color:  #F2F2F2;
 }
