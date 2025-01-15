@@ -115,19 +115,7 @@ nav a.active {
 
 
 /*For the waste and district box*/
-.waste-box, .district-box, .seasonal-box {
-    background-color: #ffffff;
-    color: #000000; 
-    text-align: center;
-    padding: 2rem;
-    border-radius: 15px; /* Rounded corners */
-    width: 80%;
-    margin: 2rem auto;
-    border: 2px solid #0e1123;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 .district-box img{
   width: 100%; /* Make the image fill the width of the box */
@@ -233,9 +221,12 @@ select {
 }
 
 /* Left side: Graphs */
-.graphs {
+#graph-diversion {
     display: grid;
     grid-template-columns: repeat(2, 50%); /* Two columns */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid {
@@ -251,4 +242,98 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.waste-box {
+    background-color: #ffffff;
+    color: #000000; 
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px; /* Rounded corners */
+    width: 80%;
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 2px solid #0e1123;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.plus-symbol {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold; /* Make it bold if desired */
+    margin: 0 10px; /* Add spacing around it */
+    vertical-align: middle; /* Align it with the images */
+    color: #000;
+} /* Set the color if needed */
+.grey-box {
+    width: 80%; /* Set default width relative to its parent */
+    max-width: 400px; /* Limit maximum width */
+    background-color:#e7e8eb;
+    display: flex;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 15px; /* Rounded corners */
+    margin: 0.5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formula-label {
+    width: 80%; /* Limit maximum width */
+    background-color:#0e1123;
+    display: flex;
+    text-align: center;
+    padding: 0.25rem;
+    border-radius: 15px; /* Rounded corners */
+    margin: 0.25rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.fraction {
+    width: 80%; /* Set default width relative to its parent */
+    max-width: 150px; /* Limit maximum width */
+    display: flex;
+    margin: 2rem auto;
+    flex-direction: column; /* Stacks numerator and denominator vertically */
+    align-items: center; /* Centers numerator and denominator */
+    justify-content: center;
+}
+
+.numerator,
+.denominator {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 10px; /* Adds spacing between items */
+}
+
+.divider-line {
+    width: 300px; /* Full width of the fraction */
+    height: 2px; /* Thickness of the line */
+    background-color: black; /* Line color */
+    margin: 10px 0; /* Spacing above and below the line */
+}
+
+
+canvas { /* for the graph */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#percentage-final {
+    font-weight: bold;
+    margin-bottom: 1rem;
+   font-size: 1.5rem;
+    position: relative;
+    color: #FB4D42;
 }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat"
+    rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../favicon.PNG">
+ </head>
+
+<body class="diversion-page">
+
+<div class="waste-box">
+ <h2 id="tracker-name"> RESIDENTIAL TRASH DIVERSION </h2>
+
+    <div class="formula">
+        <h3>WHAT IS TRASH DIVERSION?</h3>
+        <p> Trash diversion measures the percentage of total waste that is <br>
+            diverted from landfills and incinerators through <br>
+            recycling, composting, and reuse programs.</p>
+        <div class="grey-box">
+         <div class="formula-label">
+            <p> CALCULATING DIVERSION RATE </p>
+            </div>
+         <p></p>
+        <!-- Fraction -->
+        <div class="fraction">
+            <!-- Numerator -->
+            <div class="numerator">
+                <a href="#recycling" class="category">
+                    <img src="../recycle-solid-blue.svg" alt="Recycling">
+                    <h4>RECYCLING</h4>
+                </a>
+                <span class="plus-symbol">+</span>
+                <a href="#compost" class="category">
+                    <img src="../compostable-blue.png" alt="Compost">
+                    <h4>COMPOST</h4>
+                </a>
+            </div>
+
+            <!-- Line between numerator and denominator -->
+            <div class="divider-line"></div>
+
+            <!-- Denominator -->
+            <div class="denominator">
+                <a href="#recycling" class="category">
+                    <img src="../recycle-solid-blue.svg" alt="Recycling">
+                    <h4>RECYCLING</h4>
+                </a>
+                <span class="plus-symbol">+</span>
+                <a href="#trash" class="category">
+                    <img src="../trash-solid-blue.svg" alt="Trash">
+                    <h4>TRASH</h4>
+                </a>
+                <span class="plus-symbol">+</span>
+                <a href="#compost" class="category">
+                    <img src="../compostable-blue.png" alt="Compost">
+                    <h4>COMPOST</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+        <p> The City aims to increase waste diversion on a municipal-level <br>
+        by reducing both residential and commerical waste generation. <br>
+        <p> However, commercial data is obtained through different channels and <br> 
+        may not be updated regularly.</p>
+        <p>Thus, the following data focuses on "Residential Trash Diversion"<br>
+        which is a key index of tracking the City's progress in acheiving its goals.</p> 
+</div>
+
+    <!-- (2) Annual Trend in Diversion Rate  -->
+        <h3>HAS THERE BEEN AN IMPROVEMENT OVER THE YEARS?</h3>
+            <p> As the City's efforts to increase waste diversion <br>
+            are still in their early stages of implementation,<br>
+            the Residential Trash Diversion rate has been rather stagnant over the years.</p>
+            <p> The City hopes to address this issue in the near future<br>
+            by targeting specific districts/neighborhoods with low trash diversion rates.</p>
+        <div class="grey-box">
+            <div class="formula-label">
+            <p> ANNUAL TRENDS IN RESIDENTIAL DIVERSION </p>
+            </div>
+        <div class="graphs", id="graph_diversion"></div>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="script.js"></script>
+        </div>
+
+    <!-- (3) Monthly Trash Diversion -->
+        <h3>WHAT IS OUR MOST RECENT PROGRESS?</h3>
+        <p>
+            Check out the City's most recent progress in addressing this issue<br>
+            updated on a monthly-basis!
+        </p>
+        <div class="grey-box">
+            <div class="formula-label">
+            <p> MONTHLY RESDIENTIAL DIVERSION CALCULATOR </p>
+            </div>
+            <p></p>
+        <div class="dropdown-container">
+            <label for="year">YEAR:</label>
+            <select id="year">
+                <option value="2024">2024</option>
+            </select>
+            <label for="month">MONTH:</label>
+            <select id="month">
+                <option value="MAY">MAY</option>
+            </select>
+        </div>
+        <p></p>
+        <div class="waste-categories">
+            <a href="#recycling" class="category">
+                <img src="../recycle-solid-blue.svg" alt="Recycling">
+                <h4>RECYCLING</h4>
+                <p>2,977 tons</p>
+                <p id="percentage">33.1%</p>
+            </a>
+            <a href="#trash" class="category">
+                <img src="../trash-solid-blue.svg" alt="Trash">
+                <h4>TRASH</h4>
+                <p>5,827 tons</p>
+                <p id="percentage">64.9%</p>
+            </a>
+            <a href="#compost" class="category">
+                <img src="../compostable-blue.png" alt="Compost">
+                <h4>COMPOST</h4>
+                <p>178 tons</p>
+                <p id="percentage">2.0%</p>
+            </a>
+        </div>
+        <p id="percentage-final">MONTHLY RESIDENTIAL DIVERSION RATE: 35.1%</p>
+        </div>
+    </div>
+
+</body>
+</html>
