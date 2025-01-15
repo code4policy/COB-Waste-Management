@@ -103,19 +103,30 @@ d3.csv("./data_analysis/data.csv").then(data => {
       .merge(lines)
       .attr("d", d => line(d.values))
       .on("mouseover", (event, d) => {
+        // Get the closest data point to the mouse position (use mouse position)
+        const mouseX = event.pageX - margin.left;
+        const mouseY = event.pageY - margin.top;
+        const closestDataPoint = d.values.reduce((prev, curr) => {
+          const prevDist = Math.abs(xScale(prev.Year) - mouseX) + Math.abs(yScale(prev.Value) - mouseY);
+          const currDist = Math.abs(xScale(curr.Year) - mouseX) + Math.abs(yScale(curr.Value) - mouseY);
+          return (currDist < prevDist) ? curr : prev;
+        });
+
+        // Show the tooltip and update content on hover
         tooltip.style("visibility", "visible")  // Make tooltip visible
-          .html(`District: ${d.district}<br>Year: ${d.values[0].Year}<br>Value: ${d.values[0].Value}`)
+          .html(`District: ${d.district}<br>Year: ${closestDataPoint.Year}<br>Value: ${closestDataPoint.Value}`)
           .style("left", `${event.pageX + 10}px`)
           .style("top", `${event.pageY - 20}px`);
       })
       .on("mousemove", event => {
+        // Update tooltip position on mouse movement
         tooltip.style("left", `${event.pageX + 10}px`)
           .style("top", `${event.pageY - 20}px`);
       })
       .on("mouseout", () => {
-        tooltip.style("visibility", "hidden");  // Hide tooltip on mouseout
+        // Hide the tooltip on mouseout
+        tooltip.style("visibility", "hidden");
       });
-
     // Exit old lines
     lines.exit().remove();
   }
