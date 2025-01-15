@@ -96,12 +96,15 @@ svg {
   font-size: 12px;
   text-align: left;
   background-color:  #F2F2F2;
+  border: #091f2f;
 }
 
-.increased {
-    color: red;  /* For positive relative change */
+.increase {
+    color: red; /* Red for increased */
+    font-weight: bold;
 }
 
-.decreased {
-    color: green;  /* For negative relative change */
+.decrease {
+    color: green; /* Green for decreased */
+    font-weight: bold;
 }
