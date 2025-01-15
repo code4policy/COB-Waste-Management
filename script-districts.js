@@ -41,7 +41,14 @@ d3.csv("./data_analysis/data.csv").then(data => {
   const yScale = d3.scaleLinear()
     .range([height, 0]); // y starts at the bottom
 
-  const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+  // Define district color map
+  const districtColorMap = {
+    "Charlestown, Downtown Boston, and Roxbury": "#FB4D42",  // Red
+    "Jamaica Plain and Brighton": "#091f2f",  // Dark blue
+    "North and South Dorchester": "#288BE4",  // Blue
+    "East and South Boston": "#45789C",  // Light blue
+    "West Roxbury and Hyde Park": "#D2D2D2"   // Light gray
+  };
 
   // Append x-axis group
   const xAxisGroup = svg.append("g")
@@ -54,6 +61,16 @@ d3.csv("./data_analysis/data.csv").then(data => {
   const line = d3.line()
     .x(d => xScale(d.Year))
     .y(d => yScale(d.Value));
+
+  // Append Y-axis title once (ensure it's not overwritten)
+  svg.append("text")
+    .attr("class", "y-axis-title")
+    .attr("transform", "rotate(-90)")  // Rotate the title
+    .attr("y", -margin.left + 20)
+    .attr("x", -height / 2)
+    .style("text-anchor", "middle")
+    .style("font-weight", "bold")
+    .text("Tonns per thousand people");
 
   // Draw chart
   function updateChart(variable) {
@@ -70,22 +87,7 @@ d3.csv("./data_analysis/data.csv").then(data => {
 
     // Update axes
     xAxisGroup.call(d3.axisBottom(xScale).ticks(5).tickFormat(d3.format("d")));
-    yAxisGroup.call(d3.axisLeft(yScale).tickFormat(d3.format(".0f")))
-    .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("y", -margin.left + 20)
-    .attr("x", -height / 2)
-    .style("text-anchor", "middle")
-    .text("Tonns per thousand people");
-
-    // Define district color map
-  const districtColorMap = {
-    "Charlestown, Downtown Boston, and Roxbury": "#FB4D42",  // Red
-    "Jamaica Plain and Brighton": "#091f2f",  // Dark blue
-    "North and South Dorchester": "#288BE4",  // Blue
-    "East and South Boston": "#45789C",  // Light blue
-    "West Roxbury and Hyde Park": "#D2D2D2"   // Light gray
-  };
+    yAxisGroup.call(d3.axisLeft(yScale).tickFormat(d3.format(".0f")));
 
     // Bind data to lines
     const lines = svg.selectAll(".line")
@@ -96,23 +98,23 @@ d3.csv("./data_analysis/data.csv").then(data => {
       .append("path")
       .attr("class", "line")
       .attr("fill", "none")
-      .attr("stroke", d => colorScale(d.district))
+      .attr("stroke", d => districtColorMap[d.district])  // Use the color map
       .attr("stroke-width", 3)
       .merge(lines)
       .attr("d", d => line(d.values))
       .on("mouseover", (event, d) => {
-      tooltip.style("visibility", "visible")  // Make tooltip visible
-        .html(`District: ${d.district}<br>Year: ${d.values[0].Year}<br>Value: ${d.values[0].Value}`)
-        .style("left", `${event.pageX + 10}px`)
-        .style("top", `${event.pageY - 20}px`);
-    })
-    .on("mousemove", event => {
-      tooltip.style("left", `${event.pageX + 10}px`)
-        .style("top", `${event.pageY - 20}px`);
-    })
-    .on("mouseout", () => {
-      tooltip.style("visibility", "hidden");  // Hide tooltip on mouseout
-    });
+        tooltip.style("visibility", "visible")  // Make tooltip visible
+          .html(`District: ${d.district}<br>Year: ${d.values[0].Year}<br>Value: ${d.values[0].Value}`)
+          .style("left", `${event.pageX + 10}px`)
+          .style("top", `${event.pageY - 20}px`);
+      })
+      .on("mousemove", event => {
+        tooltip.style("left", `${event.pageX + 10}px`)
+          .style("top", `${event.pageY - 20}px`);
+      })
+      .on("mouseout", () => {
+        tooltip.style("visibility", "hidden");  // Hide tooltip on mouseout
+      });
 
     // Exit old lines
     lines.exit().remove();
