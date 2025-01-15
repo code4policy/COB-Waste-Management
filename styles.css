@@ -86,7 +86,7 @@ nav a.active {
     color: #ffffff; 
     padding: 2rem; /* Space inside the box */
     border-radius: 15px; /* Rounded corners */
-    width: 100%;
+    width: 80%;
     margin: 2rem auto; /* Center the box on the page */
 }
 
@@ -251,7 +251,7 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid #0e1123;
+        border: 2px solid #0e1123;
 
 }
 
