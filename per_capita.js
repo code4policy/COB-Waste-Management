@@ -20,13 +20,9 @@ d3.csv("./data_analysis/waste_per_capita.csv").then(data => {
 
     const dynamicMessage = `Waste per capita in the City of Boston has <span class="${relativeChange >= 0 ? "increase" : "decrease"}">${relativeChange >= 0 ? "increased" : "decreased"}</span> by ${changeText} from 2015.`;
 
-    // Additional static text
-    const additionalText = `The City of Boston has committed to reduce municipal solid waste generation per capita by at least 15% by 2030 compared to 2015. How is the city performing?`;
-
     // Select the .chart-text div and insert both pieces of text
     const chartText = d3.select(".chart-text");
     chartText.html(`
-        <p>${additionalText}</p>
         <p>${dynamicMessage}</p>
     `);
 });

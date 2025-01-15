@@ -95,8 +95,8 @@ svg {
   padding-left: 2rem; /* Add spacing between the chart and text */
   font-size: 12px;
   text-align: left;
-  background-color:  #F2F2F2;
   border: #091f2f;
+  padding: 1rem;
 }
 
 .increase {
@@ -107,4 +107,29 @@ svg {
 .decrease {
     color: green; /* Green for decreased */
     font-weight: bold;
+}
+
+.chart-info {
+  flex: 1; /* Allow the titles and text to take up remaining space */
+  font-size: 14px;
+  text-align: left;
+  background-color:  #F2F2F2;
+}
+
+.chart-info h3 {
+  font-size: 16px;
+  color: #091f2f;
+  font-weight: bold;
+}
+
+.chart-info h4 {
+  font-size: 14px;
+  color: #091f2f;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.chart-info p {
+  font-size: 12px;
+  color: #333;
 }
