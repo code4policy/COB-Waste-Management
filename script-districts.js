@@ -1,6 +1,6 @@
 // Dimensions and margins
-const margin = { top: 20, right: 150, bottom: 50, left: 70 };
-const width =  700 - margin.left - margin.right;
+const margin = { top: 20, right: 100, bottom: 50, left: 70 };
+const width =  600 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 
 // Create the SVG canvas
@@ -166,3 +166,5 @@ d3.csv("./data_analysis/data.csv").then(data => {
       .text(district);
   });
 });
+
+

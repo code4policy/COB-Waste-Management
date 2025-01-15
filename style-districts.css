@@ -39,7 +39,7 @@ svg {
   font-size: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   pointer-events: none;
-  display: none;
+  visibility: hidden;
 }
 
 .tooltip::after {
@@ -61,12 +61,12 @@ svg {
     border-radius: 15px; /* Rounded corners */
     width: 80%;
     margin: 2rem auto;
-    border: 2px solid #0e1123;
+    border: 2px solid #091f2f;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.d h2 {
-  color: red;
+.district-box h2 {
+  color: #091f2f;
 }
