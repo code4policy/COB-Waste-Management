@@ -127,6 +127,18 @@ d3.csv("./data_analysis/data.csv").then(data => {
         // Hide the tooltip on mouseout
         tooltip.style("visibility", "hidden");
       });
+
+
+     // Add labels to lines
+    lines.enter().append("text")
+      .attr("class", "label")
+      .attr("x", d => xScale(d.values[d.values.length - 1].Year)) // Position at the last year
+      .attr("y", d => yScale(d.values[d.values.length - 1].Value)) // Position at the last value
+      .attr("dy", -5) // Position slightly above the line
+      .attr("text-anchor", "start")
+      .style("fill", d => districtColorMap[d.district])
+      .style("font-size", "12px")
+      .text(d => d.district); // Add district name as label 
     // Exit old lines
     lines.exit().remove();
   }
