@@ -335,24 +335,24 @@ canvas { /* for the graph */
 }
 
 /* SVG and Chart */
-svg {
+#districts {
   border: 1px solid #ddd;
   background-color: white;
 }
 
-.line {
+#districts {
   fill: none;
   stroke-width: 3px;
 }
 
 
-.axis path,
-.axis line {
+#districts path,
+#districts line {
   fill: none;
   shape-rendering: crispEdges;
 }
 
-.axis text {
+#districts text {
   font-size: 12px;
 }
 
@@ -420,7 +420,7 @@ svg {
   gap: 3rem;
 }
 
-svg {
+#districts {
   flex: 2; /* Allow the chart to take up most of the space */
   max-width: 60%; /* Limit its width */
 }
