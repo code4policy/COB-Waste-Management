@@ -52,3 +52,21 @@ svg {
   border-style: solid;
   border-color: #ccc transparent transparent transparent;
 }
+
+/*For the waste and district box*/
+.district-box {
+    background-color: #ffffff; 
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px; /* Rounded corners */
+    width: 80%;
+    margin: 2rem auto;
+    border: 2px solid #0e1123;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.d h2 {
+  color: red;
+}
