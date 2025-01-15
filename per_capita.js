@@ -1,6 +1,6 @@
-// Load the CSV
+// Load the CSV file
 d3.csv("./data_analysis/waste_per_capita.csv").then(data => {
-    // Parse the data
+    // Parse data and convert Year and relative_change to numbers
     data.forEach(d => {
         d.Year = +d.Year;
         d.relative_change = +d.relative_change;  // Ensure relative_change is a number
@@ -16,10 +16,10 @@ d3.csv("./data_analysis/waste_per_capita.csv").then(data => {
     // Construct the message based on the change
     const message = `Waste per capita in the City of Boston has ${relativeChange >= 0 ? "increased" : "decreased"} by ${percentageChange}% from 2015.`;
 
-    // Select the message box and append the text
-    const messageBox = d3.select(".message-box");
-    messageBox.html(message);
+    // Select the .chart-text div and insert the message
+    const chartText = d3.select(".chart-text");
+    chartText.html(message);
 
-    // Add appropriate class for styling
-    messageBox.attr("class", relativeChange >= 0 ? "message-box increased" : "message-box decreased");
+    // Add appropriate class for styling (red for increased, green for decreased)
+    chartText.attr("class", relativeChange >= 0 ? "chart-text increased" : "chart-text decreased");
 });
