@@ -350,7 +350,7 @@ canvas { /* for the graph */
     border-radius: 15px; /* Rounded corners */
     width: 100%;
     text-align: center;
-    margin: 2rem auto; /* Center the box on the page */
+    margin: 1rem auto; /* Center the box on the page */
 }
 
 .goal-intro {
@@ -374,12 +374,12 @@ canvas { /* for the graph */
     margin: 0.2rem 0;
     text-align: center;
     font-weight:normal;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .goal-intro h4 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
+    font-size: 1.75rem;
+    margin: 0.25rem 0;
     text-align: center;
     font-weight: bold;
 }
@@ -403,4 +403,40 @@ canvas { /* for the graph */
 
 .notes #highlight {
     font-weight: bold;}
+
+.ST-goals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.ST-goals .category h2 {
+    font-size: 6rem;
+    margin-bottom: 0.1px;
+    margin: 1px;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.ST-goals .category p {
+    font-size: 1.35rem;
+    color: white; /* Keeps the original text color */
+    pointer-events: auto; /* Ensures interactivity is not disabled */
+}
+
+#highlight-color {
+    color: #D22D23;
+    font-weight: bold;
+}
+
+#highlight-bold {
+    font-weight: bold;
+}
+
+.ST-goals .divider-line {
+    width: 2px; /* Full width of the fraction */
+    height: 150px; /* Thickness of the line */
+    background-color: white; /* Line color */
+    margin: 10px 10px; /* Spacing above and below the line */
+}
 
