@@ -97,3 +97,11 @@ svg {
   text-align: left;
   background-color:  #F2F2F2;
 }
+
+.increased {
+    color: red;  /* For positive relative change */
+}
+
+.decreased {
+    color: green;  /* For negative relative change */
+}
