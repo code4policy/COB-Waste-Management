@@ -114,24 +114,25 @@ svg.selectAll("text.bar-label")
 
 
 // Dynamically load the navbar
-fetch('./navigation-bar.html')
+fetch('navigation-bar.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('navigation-bar').innerHTML = data;
     })
     .catch(error => console.error('Error loading navigation-bar:', error));
 
-     // Function to show the corresponding graph when a tab is clicked
-    function showGraph(event, graphId) {
-      // Hide all graphs
-      const graphs = document.querySelectorAll('.graph');
-      graphs.forEach(graph => graph.classList.remove('active'));
 
-      // Remove 'active' class from all tabs
-      const tabs = document.querySelectorAll('.tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
+// Function to show the corresponding graph when a tab is clicked
+function showGraph(event, graphId) {
+// Hide all graphs
+const graphs = document.querySelectorAll('.graph.tracker');
+graphs.forEach(graph => graph.classList.remove('active'));
 
-      // Show the selected graph and activate the corresponding tab
-      document.getElementById(graphId).classList.add('active');
-      event.currentTarget.classList.add('active');
-    }
+// Remove 'active' class from all tabs
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab => tab.classList.remove('active'));
+
+// Show the selected graph and activate the corresponding tab
+document.getElementById(graphId).classList.add('active');
+event.currentTarget.classList.add('active');
+}
