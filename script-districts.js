@@ -1,6 +1,6 @@
 // Dimensions and margins
 const districtsMargin = { top: 20, right: 100, bottom: 50, left: 70 };
-const districtsWidth = 600 - districtsMargin.left - districtsMargin.right;
+const districtsWidth = 700 - districtsMargin.left - districtsMargin.right;
 const districtsHeight = 500 - districtsMargin.top - districtsMargin.bottom;
 
 // Create the SVG canvas

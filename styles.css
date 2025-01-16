@@ -537,7 +537,6 @@ canvas { /* for the graph */
 
 /* Hide all graphs by default */
 .graph.tracker {
-  display: none;
   text-align: center;
   margin-top: 20px;
 }
@@ -550,7 +549,7 @@ canvas { /* for the graph */
 iframe {
   border: none;
   width: 600px;
-  height: 423px;
+  height: 600px;
 }
 
 /* Styling for Trash, Recycling, and Compost together layout */
