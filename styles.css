@@ -161,14 +161,53 @@ nav a.active {
 /* Dropbox */
 .dropdown-wrapper {
   display: flex; 
-  gap: 10px; 
   align-items: center; /* Align dropdowns and labels vertically */
 }
 
+.dropdown-container {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; /* Align dropdowns and labels vertically */
+  margin: 1rem 1rem;
+  padding: 1rem;
+  border-radius: 15px; /* Rounded corners */
+  border: 2px #FB4D42;
+}
+
+.dropdown-container img {
+    align-items: center;
+    margin-bottom: 0.5rem; /* Align dropdowns and labels vertically */
+}
+
+.dropdown {
+    margin: 1rem 2rem; /
+}
+
+
+#year1 #year2 {
+  display: flex; 
+  margin: 1 1rem;
+  align-items: center; /* Align dropdowns and labels vertically */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#month1 #month2 {
+  display: flex; 
+  margin: 1 1rem;
+  align-items: center; /* Align dropdowns and labels vertically */
+  text-align: center;
+}
+
 select {
-  width: 100px;
+  width: 80px;
   padding: 5px;
   font-size: 10px;
+}
+
+#double-arrow {
+    max-width:50px;
+    align-items: center;
 }
 
 /* Each category link */
@@ -245,36 +284,52 @@ select {
     text-align: center;
     padding: 2rem;
     border-radius: 15px; /* Rounded corners */
-    width: 80%;
-    max-width: 500px;
     margin: 2rem auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
         border: 2px solid #0e1123;
 
 }
 
+.diversion-page .waste-box{
+    width: 1200px;
+}
+
+#tracker-name {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.diversion-box {
+    display: flex;
+    gap: 30px;
+}
 
 .plus-symbol {
-    font-size: 3rem; /* Adjust the size as needed */
+    font-size: 2.5rem; /* Adjust the size as needed */
     font-weight: bold; /* Make it bold if desired */
-    margin: 0 10px; /* Add spacing around it */
+    margin: 0 2.5px; /* Add spacing around it */
     vertical-align: middle; /* Align it with the images */
     color: #000;
+
 } /* Set the color if needed */
 .grey-box {
-    width: 80%; /* Set default width relative to its parent */
-    max-width: 400px; /* Limit maximum width */
+    color: #0e1123;
+    width: 330px;
     background-color:#e7e8eb;
     display: flex;
     text-align: center;
+    align-items: center;
     padding: 1rem;
     border-radius: 15px; /* Rounded corners */
     margin: 0.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.formula .grey-box{
+    background-color: #e9d4d3;
 }
 
 .formula-label {
@@ -295,11 +350,29 @@ select {
     text-align: center;
 }
 
+#residential{
+    background-color:white;
+    color: #D22D23;
+    width: 70%;
+    height: 20px;
+}
+
+#commercial{
+    background-color:#e7e8eb;
+    color: #0e1123;
+    width: 70%;
+    height: 20px;
+}
+
+.formula .formula-label {
+    background-color:#D22D23;
+}
+
 .fraction {
     width: 80%; /* Set default width relative to its parent */
     max-width: 150px; /* Limit maximum width */
     display: flex;
-    margin: 2rem auto;
+    margin: 0.2rem auto;
     flex-direction: column; /* Stacks numerator and denominator vertically */
     align-items: center; /* Centers numerator and denominator */
     justify-content: center;
@@ -310,14 +383,25 @@ select {
     display: flex;
     align-items: center; /* Aligns items vertically */
     justify-content: center; /* Centers items horizontally */
-    gap: 10px; /* Adds spacing between items */
+    gap: 5px; /* Adds spacing between items */
+    margin: 1rem;
+}
+
+.numerator img{
+    width: 29px;
+    height: 29px;
+}
+
+.denominator img{
+    width: 30px;
+    height: 30px;
 }
 
 .divider-line {
-    width: 300px; /* Full width of the fraction */
+    width: 250px; /* Full width of the fraction */
     height: 2px; /* Thickness of the line */
     background-color: black; /* Line color */
-    margin: 10px 0; /* Spacing above and below the line */
+    margin: 5px 0; /* Spacing above and below the line */
 }
 
 
@@ -332,6 +416,124 @@ canvas { /* for the graph */
    font-size: 1.5rem;
     position: relative;
     color: #FB4D42;
+}
+/* Styling for goal-html */
+
+.goal-box {
+    max-width: 1500px;
+    background-color: #091F2F; 
+    color: #ffffff; 
+    padding: 1rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto; /* Center the box on the page */
+}
+
+.goal-intro {
+    color: #D22D23;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.goal-intro h2 {
+    color: #D22D23; 
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-align: center; /* Center text inside the box */
+}
+
+.goal-intro h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0.2rem 0;
+    text-align: center;
+    font-weight:normal;
+    margin-bottom: 20px;
+}
+
+.goal-intro h4 {
+    font-size: 1.75rem;
+    margin: 0.25rem 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.goal-intro p{
+    color: white;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.notes {
+    text-align: center;
+}
+
+.notes p {
+    color: #091F2F;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.notes #highlight {
+    font-weight: bold;}
+
+.ST-goals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.ST-goals .category h2 {
+    font-size: 6rem;
+    margin-bottom: 0.1px;
+    margin: 1px;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.ST-goals .category p {
+    font-size: 1.35rem;
+    color: white; /* Keeps the original text color */
+    pointer-events: auto; /* Ensures interactivity is not disabled */
+}
+
+#highlight-color {
+    color: #D22D23;
+    font-weight: bold;
+}
+
+#highlight-bold {
+    font-weight: bold;
+}
+
+.ST-goals .divider-line {
+    width: 2px; /* Full width of the fraction */
+    height: 150px; /* Thickness of the line */
+    background-color: white; /* Line color */
+    margin: 10px 10px; /* Spacing above and below the line */
+}
+
+/*monthly diversion*/
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: white;
+    background-color: #D22D23;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #004494;
 }
 
 /* SVG and Chart */
