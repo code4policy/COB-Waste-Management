@@ -11,23 +11,28 @@
 
 <body class="diversion-page">
 
-<div class="waste-box">
  <h2 id="tracker-name"> RESIDENTIAL TRASH DIVERSION </h2>
 
+<div class="waste-box">
+<div class="diversion-box">
+ <div>
     <div class="formula">
-        <h3>WHAT IS TRASH DIVERSION?</h3>
-        <p> Trash diversion measures the percentage of total waste that is <br>
-            diverted from landfills and incinerators through <br>
-            recycling, composting, and reuse programs.</p>
         <div class="grey-box">
-         <div class="formula-label">
-            <p> CALCULATING DIVERSION RATE </p>
+        <h3 id="highlight-color">WHAT IS TRASH DIVERSION?</h3>
+        <p> Trash diversion refers to the <span id="highlight-bold"> percentage of <br>
+            total waste that is diverted from landfills and incinerators </span> <br>
+            through recycling, composting, and reuse programs.</p>
+
+            <div class="formula-label">
+            <p> CALCULATING TRASH DIVERSION RATE </p>
             </div>
-         <p></p>
-        <!-- Fraction -->
-        <div class="fraction">
-            <!-- Numerator -->
-            <div class="numerator">
+        <p> Trash diversion is calculated by a simple formula of <br>
+            dividing the volume of <span id="highlight-bold"> recycling and compost</span> <br>
+            over <span id="highlight-bold"> total volume of waste</span>.</p>
+            <!-- Fraction -->
+            <div class="fraction">
+                <!-- Numerator -->
+                <div class="numerator">
                 <a href="#recycling" class="category">
                     <img src="../recycle-solid-blue.svg" alt="Recycling">
                     <h4>RECYCLING</h4>
@@ -37,13 +42,13 @@
                     <img src="../compostable-blue.png" alt="Compost">
                     <h4>COMPOST</h4>
                 </a>
-            </div>
+                </div>
 
-            <!-- Line between numerator and denominator -->
-            <div class="divider-line"></div>
+                <!-- Line between numerator and denominator -->
+                <div class="divider-line"></div>
 
-            <!-- Denominator -->
-            <div class="denominator">
+                <!-- Denominator -->
+                <div class="denominator">
                 <a href="#recycling" class="category">
                     <img src="../recycle-solid-blue.svg" alt="Recycling">
                     <h4>RECYCLING</h4>
@@ -58,49 +63,120 @@
                     <img src="../compostable-blue.png" alt="Compost">
                     <h4>COMPOST</h4>
                 </a>
+                </div>
             </div>
+
+            <p> The <span id="highlight-bold"> Municipal Diversion rate </span> that the City aims to <br>
+                increase consists of two components: <br>
+                Residential and Commercial Diversion rates.</p>
+            <p> As the data on Commerical rate is currently unavailable,<br>
+                we will focus on the <span id="highlight-bold"> Residential rate </span> in this section.</p>
+
+             <div class="formula-label">
+            <p> MUNICIPAL DIVERSION RATE </p>
+            </div>
+
+             <div class="formula-label" id="residential">
+            <p id="highlight-color"> RESIDENTIAL DIVERSION RATE </p>
+            </div>
+
+              <div class="formula-label" id="commercial">
+            <p> COMMERCIAL DIVERSION RATE </p>
+            </div>
+
+
         </div>
     </div>
 </div>
 
     <!-- (2) Annual Trend in Diversion Rate  -->
+ <div class="diversion-section">
         <h3>HAS THERE BEEN AN IMPROVEMENT OVER THE YEARS?</h3>
-            <p> As the City's efforts to increase waste diversion <br>
-            are still in their early stages of implementation,<br>
-            the Residential Trash Diversion rate has been rather stagnant over the years.</p>
+            <p> As the City is still in the early stages of adopting ZERO WASTE policies, <br> 
+            the Residential Trash Diversion rate has remained relatively unchanged over the years.</p>
             <p> The City hopes to address this issue in the near future<br>
-            by targeting specific districts/neighborhoods with low trash diversion rates.</p>
+            by targeting specific <a href=".index.html">districts</a>/neighborhoods with low trash diversion rates.</p>
         <div class="grey-box">
             <div class="formula-label">
             <p> ANNUAL TRENDS IN RESIDENTIAL DIVERSION </p>
             </div>
-        <div class="graphs", id="graph_diversion"></div>
-        <script src="https://d3js.org/d3.v7.min.js"></script>
-        <script src="script.js"></script>
+            <div class="graphs", id="graph_diversion"></div>
+            <script src="https://d3js.org/d3.v7.min.js"></script>
+            <script src="script.js"></script>
+            <p><span id="highlight-bold"> * Note: </span> Years represent fiscal years. <br>
+            Data for 2024 excludes June as it was not <br>
+            available at the time of analysis. </p>
         </div>
+  </div>
 
     <!-- (3) Monthly Trash Diversion -->
+ <div class="diversion-section">
         <h3>WHAT IS OUR MOST RECENT PROGRESS?</h3>
         <p>
-            Check out the City's most recent progress in addressing this issue<br>
-            updated on a monthly-basis!
+            Check out the changes in Monthly Residential Diversion rate.<br>
         </p>
         <div class="grey-box">
             <div class="formula-label">
-            <p> MONTHLY RESDIENTIAL DIVERSION CALCULATOR </p>
+            <p> COMPARISON OF MONTHLY DIVERSION </p>
             </div>
-            <p></p>
+            <p>Select <span id="highlight-bold">YEAR</span> and <span id="highlight-bold">MONTH</span> you would like to compare:</p>
         <div class="dropdown-container">
-            <label for="year">YEAR:</label>
+            <div class="dropdown">
+            <label for="year1">YEAR:</label>
             <select id="year">
+                <option value="2024">2021</option>                
+                <option value="2024">2022</option>
+                <option value="2024">2023</option>
                 <option value="2024">2024</option>
             </select>
-            <label for="month">MONTH:</label>
+            <label for="month1">MONTH:</label>
             <select id="month">
-                <option value="MAY">MAY</option>
+                <option value="MAY">JANUARY</option>
+                <option value="MAY">FEBRUARY</option>
+                <option value="MAY">MARCH</option>
+                <option value="MAY">APRIL</option>
+                <option value="MAY">MAY</option>                
+                <option value="MAY">JUNE</option>
+                <option value="MAY">JULY</option>
+                <option value="MAY">AUGUST</option>
+                <option value="MAY">SEPTEMBER</option>
+                <option value="MAY">AUGUST</option>
+                <option value="MAY">OCTOBER</option>
+                <option value="MAY">NOVEMBER</option>
+                <option value="MAY">DECEMBER</option>
             </select>
+            </div>
+            <div>
+            <img src="double-arrow.svg" alt="Double Arrow" id="double-arrow">
+            </div>
+            <div class="dropdown">
+            <label for="year2">YEAR:</label>
+            <select id="year">
+                <option value="2024">2021</option>                
+                <option value="2024">2022</option>
+                <option value="2024">2023</option>
+                <option value="2024">2024</option>
+            </select>
+            <label for="month2">MONTH:</label>
+            <select id="month">
+                <option value="MAY">JANUARY</option>
+                <option value="MAY">FEBRUARY</option>
+                <option value="MAY">MARCH</option>
+                <option value="MAY">APRIL</option>
+                <option value="MAY">MAY</option>                
+                <option value="MAY">JUNE</option>
+                <option value="MAY">JULY</option>
+                <option value="MAY">AUGUST</option>
+                <option value="MAY">SEPTEMBER</option>
+                <option value="MAY">AUGUST</option>
+                <option value="MAY">OCTOBER</option>
+                <option value="MAY">NOVEMBER</option>
+                <option value="MAY">DECEMBER</option>
+            </select>
+            </div>
         </div>
-        <p></p>
+        <button type="button" id="analyze-btn">Analyze</button>
+        <script src="script.js"></script>
         <div class="waste-categories">
             <a href="#recycling" class="category">
                 <img src="../recycle-solid-blue.svg" alt="Recycling">
@@ -123,6 +199,8 @@
         </div>
         <p id="percentage-final">MONTHLY RESIDENTIAL DIVERSION RATE: 35.1%</p>
         </div>
+    </div>
+    <script src="script-diversion2.js"></script>
     </div>
 
 </body>
