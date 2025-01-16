@@ -69,6 +69,12 @@
     .center {
       text-align: center;
     }
+
+    img {
+      max-width: 600px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -113,17 +119,14 @@
 
   <!-- Combined Graphs: Trash, Recycle, and Compost -->
   <div id="combined" class="graph">
-    <!-- Add the image -->
     <div class="center">
       <img src="../data_analysis/trash-options.jpg" 
-           alt="Trash, Recycle, Compost Bins" 
-           style="max-width: 600px; border-radius: 10px; margin-bottom: 20px;">
+           alt="Trash, Recycle, Compost Bins">
       <p style="font-size: 1.2em; color: #555; margin-top: 10px;">
         "Sort it right! Landfill, Recycle, and Compost bins are here to help."
       </p>
     </div>
 
-    <!-- Trash and Recycling side by side -->
     <div class="row">
       <iframe 
         title="Cleaner Future Ahead: Trash Generation Shrinks" 
@@ -139,7 +142,6 @@
       </iframe>
     </div>
 
-    <!-- Compost in the next row (centered) -->
     <div class="center">
       <iframe 
         title="A Greener Future: Compost Levels Double in Two Years" 
@@ -156,7 +158,7 @@
       title="Waste Disposal Tracker (in thousands of tonnes)" 
       aria-label="Grouped Bars" 
       id="datawrapper-chart-GPnn4" 
-      src="https://datawrapper.dwcdn.net/Gpnn4/4/">
+      src="https://datawrapper.dwcdn.net/GPnn4/4/">
     </iframe>
   </div>
 
