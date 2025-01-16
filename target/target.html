@@ -1,126 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../styles.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat"
-        rel="stylesheet" />
-        <link rel="icon" type="image/png" href="../favicon.PNG">
-        <title>TEAM ZERO WASTE GOALS</title>
-    </head>
-
-    <!-- This is the code for Boston's strategy to achieve the targets-->
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat"
+    rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../favicon.PNG">
+    <title>ZERO WASTE BOSTON</title>
+</head>
 <body>
     <header>
         <img src="../logo-white_red.png" alt="Logo" class="logo">
         <h1>ZERO WASTE BOSTON </h1>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
     </header>
 
-    <nav>
-        <a href="../index.html">Data</a>
-        <a href="target.html">Team Zero Waste Goals for 2025</a>
-    </nav>
+<div id="navigation-bar"></div>
+
    <div class="grid">
-    <!-- Box 1 -->
     <div class="info-box">
-        <h2>QUICK REMINDER : <br> TEAM ZERO WASTE GOALS FOR 2025</h2>
-        <p>
-            <ul> 
-                <li>Increase <span class="highlight">trash diversion by 5%</span></li>
-                <li>Develop metrics to identify gaps in our current waste management systems, focusing on:
-                    <ol>
-                        <li><span class="highlight">District/Neighborhood Trends</span></li>
-                        <li><span class="highlight">Seasonal Trends</span></li>
-                        <li>Key Performance Indicators (KPIs)</li>
-                        <li>Existing Local & State Policy</li>
-                    </ol>
-                </li>
-            </ul>
-        </p>
+        
     </div>   
 
-    <!-- Box 2 -->
-    <div class="waste-box">
-        <h2>MONTHLY TRASH DIVERSION</h2>
-        <p class="info-text">
-            SELECT YEAR AND MONTH TO CHECKOUT OUR RECENT PROGRESS<br>
-            IN ATTAINING THE TRASH DIVERSION TARGET
-        </p>
-        <div class="dropdown-container">
-            <label for="year">YEAR:</label>
-            <select id="year">
-                <option value="2024">2024</option>
-            </select>
-            <label for="month">MONTH:</label>
-            <select id="month">
-                <option value="MAY">MAY</option>
-            </select>
-        </div>
-        <div class="waste-categories">
-            <a href="#recycling" class="category">
-                <img src="../recycle-solid-blue.svg" alt="Recycling">
-                <h4>RECYCLING</h4>
-                <p>2,977 tons</p>
-                <p id="percentage">33.1%</p>
-            </a>
-            <a href="#trash" class="category">
-                <img src="../trash-solid-blue.svg" alt="Trash">
-                <h4>TRASH</h4>
-                <p>5,827 tons</p>
-                <p id="percentage">64.9%</p>
-            </a>
-            <a href="#compost" class="category">
-                <img src="../compostable-blue.png" alt="Compost">
-                <h4>COMPOST</h4>
-                <p>178 tons</p>
-                <p id="percentage">2.0%</p>
-            </a>
-        </div>
-    </div>
-
-    <!-- Box 3 -->
-    <div class="district-box">
-        <h2>DISTRICT LEVEL DATA</h2>
-        <p class="info-text">
-            SELECT YEAR TO SEE WHICH DISTRICT <br>
-            CREATED THE MOST WASTE ANNUALLY OVER THE YEARS (2020-2024)
-        </p>
-        <div class="dropdown-container">
-            <label for="year">YEAR:</label>
-            <select id="year">
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-            </select>
-        </div>
-        <img src="../Boston+map.jpg" alt="Map of Boston City">
-    </div>
-
-    <!-- Box 4 -->
     <div class="seasonal-box">
- <!--       <h2>SEASONAL DATA</h2>
-        <p class="info-text">
-            SELECT WASTE TYPE TO SEE AVERAGE VOLUME OF<br>
-            MONTHLY DISPOSAL OVER THE YEARS 
-        </p>
-        <div class="dropdown-container">
-            <label for="waste-type">WASTE TYPE:</label>
-            <select id="waste-type">
-                <option value="total-waste">TOTAL WASTE</option>
-                <option value="recyling'">RECYCLING</option>
-                <option value="trash">TRASH</option>
-                <option value="compost">COMPOST</option>
-            </select>
-        </div>
-    -->
         <img src="../Monthly_Average_Trash_Recycle.png" alt="Seasonal Data of Trash">
     </div>
 </div> 
-<!-- Link for the Zero Waste Boston Website -->
-<p>For more information on Zero Waste Boston, please go to <a href="https://www.boston.gov/departments/environment/zero-waste-boston" target="_blank">this link</a>.</p>    
+<script src="../script.js"></script>
 </body>
 </html>
