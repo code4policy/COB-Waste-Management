@@ -86,7 +86,7 @@ nav a.active {
     color: #ffffff; 
     padding: 2rem; /* Space inside the box */
     border-radius: 15px; /* Rounded corners */
-    width: 80%;
+    width: 70%;
     margin: 2rem auto; /* Center the box on the page */
 }
 
@@ -94,7 +94,6 @@ nav a.active {
 .info-box h2 {
     color: #D22D23; 
     font-size: 3rem;
-    margin-bottom: 0.5rem;
     font-weight: bold;
     text-align: center; /* Center text inside the box */
 }

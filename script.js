@@ -1,4 +1,3 @@
-// Set the dimensions and margins of the graph
 const margin = { top: 30, right: 30, bottom: 50, left: 60 }; // Adjusted margins for spacing
 const width = 300 - margin.left - margin.right; // Updated width
 const height = 300 - margin.top - margin.bottom; // Updated height
