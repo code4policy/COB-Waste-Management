@@ -12,7 +12,7 @@ const svg = d3.select("#graph_diversion")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Load the CSV file
-d3.csv("diversion.csv").then(data => {
+d3.csv("data_analysis/diversion.csv").then(data => {
     // Parse the data
     data.forEach(d => {
         d.Year = d.Year; // Year stays as a string
