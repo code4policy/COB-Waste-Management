@@ -263,19 +263,7 @@ select {
     vertical-align: middle; /* Align it with the images */
     color: #000;
 } /* Set the color if needed */
-.grey-box {
-    width: 80%; /* Set default width relative to its parent */
-    max-width: 400px; /* Limit maximum width */
-    background-color:#e7e8eb;
-    display: flex;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 15px; /* Rounded corners */
-    margin: 0.5rem auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 .formula-label {
     width: 80%; /* Limit maximum width */
