@@ -401,11 +401,8 @@ canvas { /* for the graph */
 }
 
 .chart-container {
-  display: flex;
-  justify-content: space-between; /* Space out the chart and text */
   align-items: center; /* Align items vertically */
   margin-top: 1rem; /* Add spacing above */
-  gap: 3rem;
 }
 
 #districts {
@@ -478,8 +475,6 @@ canvas { /* for the graph */
 }
 
 .chart-container {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem; /* Add space below chart-info */
 }
