@@ -1,14 +1,14 @@
 // Dimensions and margins
-const margin = { top: 20, right: 100, bottom: 50, left: 70 };
-const width =  600 - margin.left - margin.right;
-const height = 500 - margin.top - margin.bottom;
+const districtsMargin = { top: 20, right: 100, bottom: 50, left: 70 };
+const districtsWidth = 700 - districtsMargin.left - districtsMargin.right;
+const districtsHeight = 500 - districtsMargin.top - districtsMargin.bottom;
 
 // Create the SVG canvas
-const svg = d3.select("#districts")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+const districts = d3.select("#districts")
+  .attr("width", districtsWidth + districtsMargin.left + districtsMargin.right)
+  .attr("height", districtsHeight + districtsMargin.top + districtsMargin.bottom)
   .append("g")
-  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  .attr("transform", `translate(${districtsMargin.left}, ${districtsMargin.top})`);
 
 // Tooltip
 const tooltip = d3.select(".tooltip")
@@ -51,11 +51,11 @@ d3.csv("./data_analysis/data.csv").then(data => {
   };
 
   // Append x-axis group
-  const xAxisGroup = svg.append("g")
+  const xAxisGroup = districts.append("g")
     .attr("transform", `translate(0, ${height})`);
 
   // Append y-axis group
-  const yAxisGroup = svg.append("g");
+  const yAxisGroup = districts.append("g");
 
   // Line generator
   const line = d3.line()
@@ -63,7 +63,7 @@ d3.csv("./data_analysis/data.csv").then(data => {
     .y(d => yScale(d.Value));
 
   // Append Y-axis title once (ensure it's not overwritten)
-  svg.append("text")
+  districts.append("text")
     .attr("class", "y-axis-title")
     .attr("transform", "rotate(-90)")  // Rotate the title
     .attr("y", -margin.left + 20)
@@ -90,7 +90,7 @@ d3.csv("./data_analysis/data.csv").then(data => {
     yAxisGroup.call(d3.axisLeft(yScale).tickFormat(d3.format(".0f")));
 
     // Bind data to lines
-    const lines = svg.selectAll(".line")
+    const lines = districts.selectAll(".line")
       .data(filteredData, d => d.district);
 
     // Enter new lines
@@ -103,7 +103,7 @@ d3.csv("./data_analysis/data.csv").then(data => {
       .merge(lines)
       .attr("d", d => line(d.values))
       .on("mouseover", (event, d) => {
-      const mouseX = d3.pointer(event, svg.node())[0]; // Get mouse X relative to SVG
+      const mouseX = d3.pointer(event, districts.node())[0]; // Get mouse X relative to SVG
       const mouseYear = Math.round(xScale.invert(mouseX)); // Map X position to Year
       
       // Find the data point for the closest year
@@ -146,23 +146,8 @@ d3.csv("./data_analysis/data.csv").then(data => {
   updateChart("Trash tonnage (per 1,000 people)");
 
   // Create legend inside the graph at the top-right corner, with vertical arrangement
-  const legend = svg.append("g")
+  const legend = districts.append("g")
     .attr("transform", `translate(${width - 100},20)`);  // Position the legend inside
-
-  const districts = Array.from(districtColorMap.keys());
-  districts.forEach((district, index) => {
-    legend.append("circle")
-      .attr("cx", 0)
-      .attr("cy", index * 30)  // Spacing out the circles vertically
-      .attr("r", 6)
-      .style("fill", districtColorMap[district]);
-
-    legend.append("text")
-      .attr("x", 10)
-      .attr("y", index * 30 + 5)  // Align the text vertically with the circles
-      .style("font-size", "10px")
-      .text(district);
-  });
 });
 
 
