@@ -1,106 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat"
-    rel="stylesheet" />
-    <link rel="icon" type="image/png" href="icons/favicon.PNG">
-    <title>ZERO WASTE BOSTON</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Trends Dashboard</title>
+  
+  <!-- External Styles & Fonts -->
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="icons/favicon.PNG">
+
+  <style>
+    /* Page Ribbon (Header) - Exact Color & Styling */
+    header {
+      display: flex;
+      align-items: center;
+      background-color: #0A1F33;  /* Matched to the attached image */
+      color: white;
+      padding: 15px 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    /* Styling for the tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 15px 0;
+      cursor: pointer;
+      background-color: #ddd;
+      color: black;
+      font-weight: bold;
+      border-right: 1px solid #ccc;
+      transition: background-color 0.3s;
+    }
+
+    .tab:hover {
+      background-color: #ccc;
+    }
+
+    .tab.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .tab:last-child {
+      border-right: none;
+    }
+
+    /* Hide all graphs by default */
+    .graph {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Show the active graph */
+    .graph.active {
+      display: block;
+    }
+
+    iframe {
+      border: none;
+      width: 600px;
+      height: 423px;
+    }
+
+    /* Layout Styling */
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    img {
+      max-width: 600px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- Page Ribbon (Header) -->
   <header>
-      <img src="icons/logo-white_red.png" alt="Logo" class="logo">
-      <h1>ZERO WASTE BOSTON </h1>
-      <script src="https://d3js.org/d3.v7.min.js"></script>
+    <img src="icons/logo-white_red.png" alt="Logo" class="logo">
+    <h1>ZERO WASTE BOSTON</h1>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </header>
 
-    <div id="navigation-bar"></div>
-    <h1>Cleaner Future Ahead: Waste Trends</h1>
+  <h1 style="text-align: center; color: green;">Cleaner Future Ahead: Waste Trends</h1>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <div class="tab active" onclick="showGraph(event, 'trash')">Trash</div>
-      <div class="tab" onclick="showGraph(event, 'recycling')">Recycling</div>
-      <div class="tab" onclick="showGraph(event, 'compost')">Compost</div>
-      <div class="tab" onclick="showGraph(event, 'combined')">Trash, Recycle & Compost</div>
-      <div class="tab" onclick="showGraph(event, 'overall-trends')">Overall Trends</div>
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="showGraph(event, 'trash')">Trash</div>
+    <div class="tab" onclick="showGraph(event, 'recycling')">Recycling</div>
+    <div class="tab" onclick="showGraph(event, 'compost')">Compost</div>
+    <div class="tab" onclick="showGraph(event, 'combined')">Trash, Recycle & Compost</div>
+    <div class="tab" onclick="showGraph(event, 'overall-trends')">Overall Trends</div>
+  </div>
+
+  <!-- Individual Graphs -->
+  <div id="trash" class="graph active">
+    <iframe title="Cleaner Future Ahead: Trash Generation Shrinks" 
+            aria-label="Interactive line chart" 
+            src="https://datawrapper.dwcdn.net/mFQmh/1/">
+    </iframe>
+  </div>
+
+  <div id="recycling" class="graph">
+    <iframe title="Recycling in Focus: A 5-Year Recycling Overview" 
+            aria-label="Interactive line chart" 
+            src="https://datawrapper.dwcdn.net/5Iy6E/1/">
+    </iframe>
+  </div>
+
+  <div id="compost" class="graph">
+    <iframe title="A Greener Future: Compost Levels Double in Two Years" 
+            aria-label="Interactive line chart" 
+            src="https://datawrapper.dwcdn.net/WGUNk/1/">
+    </iframe>
+  </div>
+
+  <!-- Combined Graphs: Trash, Recycle, and Compost -->
+  <div id="combined" class="graph">
+    <div class="center">
+      <img src="../data_analysis/trash-options.jpg" alt="Trash, Recycle, Compost Bins">
+      <p style="font-size: 1.2em; color: #555; margin-top: 10px;">
+        "Sort it right! Landfill, Recycle, and Compost bins are here to help."
+      </p>
     </div>
 
-    <!-- Individual Graphs -->
-    <div id="trash" class="graph active">
-      <iframe 
-        title="Cleaner Future Ahead: Trash Generation Shrinks" 
-        aria-label="Interactive line chart" 
-        id="datawrapper-chart-mFQmh" 
-        src="https://datawrapper.dwcdn.net/mFQmh/1/">
+    <div class="row">
+      <iframe title="Cleaner Future Ahead: Trash Generation Shrinks" 
+              aria-label="Interactive line chart" 
+              src="https://datawrapper.dwcdn.net/mFQmh/1/">
+      </iframe>
+      <iframe title="Recycling in Focus: A 5-Year Recycling Overview" 
+              aria-label="Interactive line chart" 
+              src="https://datawrapper.dwcdn.net/5Iy6E/1/">
       </iframe>
     </div>
 
-    <div id="recycling" class="graph.tracker">
-      <iframe 
-        title="Recycling in Focus: A 5-Year Recycling Overview" 
-        aria-label="Interactive line chart" 
-        id="datawrapper-chart-5Iy6E" 
-        src="https://datawrapper.dwcdn.net/5Iy6E/1/">
+    <div class="center">
+      <iframe title="A Greener Future: Compost Levels Double in Two Years" 
+              aria-label="Interactive line chart" 
+              src="https://datawrapper.dwcdn.net/WGUNk/1/">
       </iframe>
     </div>
+  </div>
 
-    <div id="compost" class="graph.tracker">
-      <iframe 
-        title="A Greener Future: Compost Levels Double in Two Years" 
-        aria-label="Interactive line chart" 
-        id="datawrapper-chart-WGUNk" 
-        src="https://datawrapper.dwcdn.net/WGUNk/1/">
-      </iframe>
-    </div>
+  <!-- Overall Trends Graph -->
+  <div id="overall-trends" class="graph">
+    <iframe title="Waste Disposal Tracker (in thousands of tonnes)" 
+            aria-label="Grouped Bars" 
+            src="https://datawrapper.dwcdn.net/GPnn4/4/">
+    </iframe>
+  </div>
 
-    <!-- Combined Graphs: Trash, Recycle, and Compost -->
-    <div id="combined" class="graph.tracker">
-      <div class="center">
-        <img src="../data_analysis/trash-options.jpg" 
-             alt="Trash, Recycle, Compost Bins">
-        <p style="font-size: 1.2em; color: #555; margin-top: 10px;">
-          "Sort it right! Landfill, Recycle, and Compost bins are here to help."
-        </p>
-      </div>
+  <script>
+    // Function to show the corresponding graph when a tab is clicked
+    function showGraph(event, graphId) {
+      // Hide all graphs
+      const graphs = document.querySelectorAll('.graph');
+      graphs.forEach(graph => graph.classList.remove('active'));
 
-      <div class="row">
-        <iframe 
-          title="Cleaner Future Ahead: Trash Generation Shrinks" 
-          aria-label="Interactive line chart" 
-          id="datawrapper-chart-mFQmh" 
-          src="https://datawrapper.dwcdn.net/mFQmh/1/">
-        </iframe>
-        <iframe 
-          title="Recycling in Focus: A 5-Year Recycling Overview" 
-          aria-label="Interactive line chart" 
-          id="datawrapper-chart-5Iy6E" 
-          src="https://datawrapper.dwcdn.net/5Iy6E/1/">
-        </iframe>
-      </div>
+      // Remove 'active' class from all tabs
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
 
-      <div class="center">
-        <iframe 
-          title="A Greener Future: Compost Levels Double in Two Years" 
-          aria-label="Interactive line chart" 
-          id="datawrapper-chart-WGUNk" 
-          src="https://datawrapper.dwcdn.net/WGUNk/1/">
-        </iframe>
-      </div>
-    </div>
+      // Show the selected graph and activate the corresponding tab
+      document.getElementById(graphId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
 
-    <!-- Overall Trends Graph -->
-    <div id="overall-trends" class="graph.tracker">
-      <iframe 
-        title="Waste Disposal Tracker (in thousands of tonnes)"
-        aria-label="Grouped Bars" 
-        id="datawrapper-chart-GPnn4" 
-        src="https://datawrapper.dwcdn.net/GPnn4/4/">
-      </iframe>
-    </div>
-  <script type="script.js"></script>
 </body>
 </html>
