@@ -111,3 +111,12 @@ svg.selectAll("text.bar-label")
 }).catch(error => {
     console.error("Error loading the CSV file:", error);
 });
+
+
+// Dynamically load the navbar
+fetch('./navigation-bar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navigation-bar').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navigation-bar:', error));

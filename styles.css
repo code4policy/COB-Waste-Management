@@ -86,7 +86,7 @@ nav a.active {
     color: #ffffff; 
     padding: 2rem; /* Space inside the box */
     border-radius: 15px; /* Rounded corners */
-    width: 100%;
+    width: 80%;
     margin: 2rem auto; /* Center the box on the page */
 }
 
@@ -115,12 +115,6 @@ nav a.active {
 
 
 /*For the waste and district box*/
-
-
-.district-box img{
-  width: 100%; /* Make the image fill the width of the box */
-  height: auto; /* Maintain the aspect ratio of the image */
-}
 
 .seasonal-box img{
   width: 100%; /* Make the image fill the width of the box */
@@ -218,6 +212,7 @@ select {
 .dashboard {
     display: flex; /* Flexbox to arrange graphs and boxes side by side */
     gap: 10px;
+
 }
 
 /* Left side: Graphs */
@@ -253,10 +248,11 @@ select {
     width: 80%;
     max-width: 500px;
     margin: 2rem auto;
-    border: 2px solid #0e1123;
     display: flex;
     flex-direction: column;
     justify-content: center;
+        border: 2px solid #0e1123;
+
 }
 
 
@@ -267,19 +263,7 @@ select {
     vertical-align: middle; /* Align it with the images */
     color: #000;
 } /* Set the color if needed */
-.grey-box {
-    width: 80%; /* Set default width relative to its parent */
-    max-width: 400px; /* Limit maximum width */
-    background-color:#e7e8eb;
-    display: flex;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 15px; /* Rounded corners */
-    margin: 0.5rem auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 .formula-label {
     width: 80%; /* Limit maximum width */
@@ -336,4 +320,171 @@ canvas { /* for the graph */
    font-size: 1.5rem;
     position: relative;
     color: #FB4D42;
+}
+
+/* SVG and Chart */
+#districts {
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+#districts {
+  fill: none;
+  stroke-width: 3px;
+}
+
+
+#districts path,
+#districts line {
+  fill: none;
+  shape-rendering: crispEdges;
+}
+
+#districts text {
+  font-size: 12px;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #ccc transparent transparent transparent;
+}
+
+/*For the waste and district box*/
+.district-box {
+    background-color: #ffffff; 
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px; /* Rounded corners */
+    width: 80%;
+    margin: 2rem auto;
+    border: 2px solid #091f2f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.district-box h2 {
+  color: #091f2f;
+  justify-content: left;
+  text-align: left;
+  font-size: 18px;
+}
+
+.district-box p {
+  color: #091f2f;
+  justify-content: left;
+  text-align: left;
+  font-size: 12px;
+}
+
+.info-text {
+  text-align: left;
+}
+
+.chart-container {
+  align-items: center; /* Align items vertically */
+  margin-top: 1rem; /* Add spacing above */
+}
+
+#districts {
+  flex: 2; /* Allow the chart to take up most of the space */
+  max-width: 60%; /* Limit its width */
+}
+
+.chart-text {
+  flex: 1; /* Allow the text to take up remaining space */
+  padding-left: 2rem; /* Add spacing between the chart and text */
+  font-size: 12px;
+  text-align: left;
+  border: #091f2f;
+  padding: 1rem;
+}
+
+.increase {
+    color: red; /* Red for increased */
+    font-weight: bold;
+}
+
+.decrease {
+    color: green; /* Green for decreased */
+    font-weight: bold;
+}
+
+.chart-info {
+  flex: 1; /* Allow the titles and text to take up remaining space */
+  font-size: 14px;
+  text-align: left;
+  background-color:  #091F2F;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 100%;
+}
+
+.chart-info h3 {
+  font-size: 16px;
+  color: #FB4D42;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chart-info h4 {
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.chart-info p {
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+.bar-chart-container {
+    margin-top: 2rem;
+    width: 100 %;
+    text-align: center;
+}
+
+#barChart {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: transparent;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container {
+    align-items: center;
+    margin-bottom: 2rem; /* Add space below chart-info */
+}
+
+/* Bar Styling */
+.bar {
+  transition: all 0.3s ease;
+}
+
+/* Add hover effect to bars for interactivity */
+.bar:hover {
+  opacity: 0.7;
 }
