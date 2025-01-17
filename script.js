@@ -1,4 +1,4 @@
-const margin = { top: 30, right: 30, bottom: 50, left: 60 }; // Adjusted margins for spacing
+const margin = { top: 30, right: 30, bottom: 60, left: 70 }; // Adjusted margins for spacing
 const width = 500 - margin.left - margin.right; // Updated width
 const height = 300 - margin.top - margin.bottom; // Updated height
 
@@ -35,37 +35,40 @@ d3.csv("data_analysis/diversion.csv").then(data => {
         .selectAll("text")
         .attr("transform", "translate(-10, 10)rotate(-45)")
         .style("text-anchor", "end")
-        .style("font-size", "10px");
+        .style("font-size", "12px") // Increased font size
+        .style("font-weight", "bold"); // Bold labels
 
     // Add the y-axis
     svg.append("g")
         .call(d3.axisLeft(y).ticks(5))
         .selectAll("text")
-        .style("font-size", "10px");
+        .style("font-size", "12px") // Increased font size
+        .style("font-weight", "bold"); // Bold labels
 
     // Add bars
-svg.selectAll("bars")
-    .data(data)
-    .enter()
-    .append("rect")
-    .attr("x", d => x(d.Year))
-    .attr("y", d => y(d["Diversion Rate"]))
-    .attr("width", x.bandwidth())
-    .attr("height", d => height - y(d["Diversion Rate"]))
-    .attr("fill", "#0e1123");
+    svg.selectAll("bars")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", d => x(d.Year))
+        .attr("y", d => y(d["Diversion Rate"]))
+        .attr("width", x.bandwidth())
+        .attr("height", d => height - y(d["Diversion Rate"]))
+        .attr("fill", "#0e1123");
 
     // Add percentages on top of bars
-svg.selectAll("text.bar-label")
-    .data(data)
-    .enter()
-    .append("text")
-    .attr("class", "bar-label")
-    .attr("x", d => x(d.Year) + x.bandwidth() / 2) // Center text horizontally on the bar
-    .attr("y", d => y(d["Diversion Rate"]) - 5) // Position above the bar
-    .attr("text-anchor", "middle") // Align text to center
-    .style("font-size", "10px") // Adjust font size
-    .style("fill", "#000") // Set text color
-    .text(d => `${d["Diversion Rate"]}%`); // Display the diversion rate
+    svg.selectAll("text.bar-label")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "bar-label")
+        .attr("x", d => x(d.Year) + x.bandwidth() / 2) // Center text horizontally on the bar
+        .attr("y", d => y(d["Diversion Rate"]) - 5) // Position above the bar
+        .attr("text-anchor", "middle") // Align text to center
+        .style("font-size", "14px") // Increased font size
+        .style("font-weight", "bold") // Bold text
+        .style("fill", "#000") // Set text color
+        .text(d => `${d["Diversion Rate"]}%`); // Display the diversion rate
 
     // Add the trend line
     const line = d3.line()
@@ -76,7 +79,7 @@ svg.selectAll("text.bar-label")
         .datum(data)
         .attr("fill", "none")
         .attr("stroke", "#FB4D42")
-        .attr("stroke-width", 2)
+        .attr("stroke-width", 3) // Thicker trend line
         .attr("d", line);
 
     // Add dots for the trend line
@@ -86,7 +89,7 @@ svg.selectAll("text.bar-label")
         .append("circle")
         .attr("cx", d => x(d.Year) + x.bandwidth() / 2)
         .attr("cy", d => y(d["Diversion Rate"]))
-        .attr("r", 3)
+        .attr("r", 4) // Increased dot radius
         .attr("fill", "#FB4D42");
 
     // Add X-axis label
@@ -94,8 +97,9 @@ svg.selectAll("text.bar-label")
         .attr("class", "x-axis-label")
         .attr("text-anchor", "middle")
         .attr("x", width / 2)
-        .attr("y", height + margin.bottom - 5)
-        .style("font-size", "10px")
+        .attr("y", height + margin.bottom - 2)
+        .style("font-size", "14px") // Increased font size
+        .style("font-weight", "bold") // Bold text
         .text("Year");
 
     // Add Y-axis label
@@ -103,14 +107,14 @@ svg.selectAll("text.bar-label")
         .attr("class", "y-axis-label")
         .attr("text-anchor", "middle")
         .attr("x", -(height / 2))
-        .attr("y", -margin.left + 15)
+        .attr("y", -margin.left + 20)
         .attr("transform", "rotate(-90)")
-        .style("font-size", "10px")
+        .style("font-size", "14px") // Increased font size
+        .style("font-weight", "bold") // Bold text
         .text("Diversion Rate (%)");
 }).catch(error => {
     console.error("Error loading the CSV file:", error);
 });
-
 
 // Dynamically load the navbar
 fetch('navigation-bar.html')
@@ -160,4 +164,3 @@ event.currentTarget.classList.add('active');
         console.error(`Graph with ID '${graphId}' not found.`);
       }
     }
-
