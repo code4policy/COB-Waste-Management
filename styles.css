@@ -112,6 +112,22 @@ nav a.active {
     font-weight: bold;
 }
 
+.waste-percapita {
+    background-color: #ffffff; 
+    color: #ffffff; 
+    padding: 2rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    border-color: #D22D23;
+    width: 60%;
+    margin: 2rem auto; /* Center the box on the page */
+}
+
+
+.district-box h3 {
+    color: #091F2F; 
+    font-size: 16px;
+    text-align: center; /* Center text inside the box */
+}
 
 /*For the waste and district box*/
 
