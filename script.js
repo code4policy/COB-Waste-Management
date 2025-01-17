@@ -115,3 +115,52 @@ d3.csv("data_analysis/diversion.csv").then(data => {
 }).catch(error => {
     console.error("Error loading the CSV file:", error);
 });
+
+// Dynamically load the navbar
+fetch('navigation-bar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navigation-bar').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navigation-bar:', error));
+
+
+// Function to show the corresponding graph when a tab is clicked
+function showGraph(event, graphId) {
+// Hide all graphs
+const graphs = document.querySelectorAll('.graph.tracker');
+graphs.forEach(graph => graph.classList.remove('active'));
+
+// Remove 'active' class from all tabs
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab => tab.classList.remove('active'));
+
+// Show the selected graph and activate the corresponding tab
+document.getElementById(graphId).classList.add('active');
+event.currentTarget.classList.add('active');
+}
+
+!function(){"use strict";window.addEventListener("message",(function(a){
+    if(void 0!==a.data["datawrapper-height"]){
+        var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])
+        for(var r=0;r<e.length;r++)
+            if(e[r].contentWindow===a.source){
+                var i=a.data["datawrapper-height"][t]+"px";
+                e[r].style.height=i
+            }
+        }
+    }))
+}();
+
+    function showGraph(graphId) {
+      // Hide all graphs
+      document.querySelectorAll('.graph').forEach(graph => graph.classList.remove('active'));
+
+      // Show the selected graph
+      const selectedGraph = document.getElementById(graphId);
+      if (selectedGraph) {
+        selectedGraph.classList.add('active');
+      } else {
+        console.error(`Graph with ID '${graphId}' not found.`);
+      }
+    }

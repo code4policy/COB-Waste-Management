@@ -357,7 +357,6 @@ select {
 
 .diversion-container{
     max-width: 1500px;
-    padding: 1rem; /* Space inside the box */
     border-radius: 15px; /* Rounded corners */
     width: 100%;
     text-align: center;
@@ -382,17 +381,18 @@ select {
     align-items: center;
     padding: 1rem;
     border-radius: 15px; /* Rounded corners */
-    margin: 0.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0.5rem;
 }
 
+
 .formula .grey-box{
     background-color: #e9d4d3;
     padding: 3rem;
 }
+
 
 .formula h3 {
     color: #0e1123;
@@ -863,7 +863,6 @@ img {
     background-color:#0e1123;
     display: flex;
     text-align: center;
-    padding: 0.25rem;
     border-radius: 15px; /* Rounded corners */
     margin: 0.25rem auto;
     display: flex;
