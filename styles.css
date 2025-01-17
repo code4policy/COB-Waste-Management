@@ -1022,3 +1022,8 @@ img {
     text-align: center;
     margin: 1rem auto;
 }
+
+#bold2 {
+  font-color: #D22D23;
+  font-weight: bold;
+}
