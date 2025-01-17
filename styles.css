@@ -99,7 +99,6 @@ nav a.active {
     font-weight: bold; /* Optional: Makes the active link stand out */
 }
 
-
 .graph {
     border: 2px solid #ccc;
     max-width: 80%;
@@ -1011,3 +1010,15 @@ img {
     .graph-box.first-graph iframe {
       height: 380px; /* Reduce the height slightly to fix the extra space */
     }
+
+
+/*additional styling for Seasonal Data*/
+.seasonal-box {
+    max-width: 1500px;
+    color: #ffffff; 
+    padding: 1rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+}
