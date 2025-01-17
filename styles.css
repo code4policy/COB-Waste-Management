@@ -80,6 +80,25 @@ nav a.active {
     font-weight: bold; /* Optional: Makes the active link stand out */
 }
 
+.diversion-section a {
+    text-decoration: none;
+    color: #D22D23;
+    transition: color 0.3s ease;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.diversion-section a:hover {
+    color: #091F2F;
+}
+
+.diversion-section a.active {
+    color: #091F2F;
+    font-weight: bold; /* Optional: Makes the active link stand out */
+}
+
 
 .graph {
     border: 2px solid #ccc;
@@ -229,8 +248,10 @@ select {
     transition: color 0.3s ease;
 }
 
-.category:hover p {
-    color: #D22D23;
+.category h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.1px;
+    margin: 1px;
 }
 
 .category img {
@@ -308,6 +329,7 @@ select {
 #tracker-name {
     font-size: 3rem;
     text-align: center;
+    font-weight: bold;
 }
 
 .diversion-box {
@@ -320,7 +342,6 @@ select {
 
 .diversion-container{
     max-width: 1500px;
-    padding: 1rem; /* Space inside the box */
     border-radius: 15px; /* Rounded corners */
     width: 100%;
     text-align: center;
@@ -345,15 +366,18 @@ select {
     align-items: center;
     padding: 1rem;
     border-radius: 15px; /* Rounded corners */
-    margin: 0.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 0.5rem;
 }
+
 
 .formula .grey-box{
     background-color: #e9d4d3;
+    padding: 3rem;
 }
+
 
 .formula h3 {
     color: #0e1123;
@@ -371,24 +395,6 @@ select {
     text-align: center;
     font-weight:normal;
     margin-bottom: 20px;
-}
-
-.formula-label {
-    width: 80%; /* Limit maximum width */
-    background-color:#0e1123;
-    display: flex;
-    text-align: center;
-    padding: 0.25rem;
-    border-radius: 15px; /* Rounded corners */
-    margin: 0.25rem auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-    font-weight: bold;
-    text-align: center;
 }
 
 #residential{
@@ -821,7 +827,7 @@ img {
 
 .grey-box-monthly {
     color: #0e1123;
-    width: 500px;
+    width: 1000px;
     background-color:#e7e8eb;
     display: flex;
     text-align: center;
@@ -843,15 +849,14 @@ img {
     background-color:#0e1123;
     display: flex;
     text-align: center;
-    padding: 0.25rem;
     border-radius: 15px; /* Rounded corners */
     margin: 0.25rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
     text-align: center;
 }

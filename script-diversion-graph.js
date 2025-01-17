@@ -23,7 +23,7 @@ function parseCSV(data) {
 
 // Create the chart
 async function createChart() {
-    const data = await loadCSV("data_analysis/cleaned_diversion_data.csv");
+    const data = await loadCSV("cleaned_diversion_data.csv");
 
     // Extract Year-Month and % Diversion data
     const labels = data.map(row => `${row.year}-${String(row.month).padStart(2, "0")}`);
@@ -39,7 +39,7 @@ async function createChart() {
                 {
                     label: "Monthly Diversion Rate (%)",
                     data: diversionRates, // Diversion rates on y-axis
-                    borderColor: "#288BE4", // Updated to match the requested color
+                    borderColor: "#288BE4", // Line color
                     backgroundColor: "rgba(40, 139, 228, 0.2)", // Semi-transparent matching color for shading
                     pointBackgroundColor: "#288BE4", // Color for the dots
                     fill: true, // Enable shading under the curve
@@ -54,14 +54,22 @@ async function createChart() {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    display: false, // Hide the legend
+                    display: false,
                 },
                 tooltip: {
-                    intersect: false, // Tooltip activates anywhere on the x-axis
+                    intersect: false,
                     callbacks: {
                         label: function (context) {
-                            return `${context.raw}%`; // Show diversion rate with a % symbol
+                            return `${context.raw}%`;
                         },
+                    },
+                    bodyFont: {
+                        size: 14,
+                        family: "Montserrat", // Apply Montserrat font to tooltips
+                    },
+                    titleFont: {
+                        size: 14,
+                        family: "Montserrat", // Apply Montserrat font to tooltip titles
                     },
                 },
             },
@@ -69,15 +77,39 @@ async function createChart() {
                 x: {
                     title: {
                         display: true,
-                        text: "Time",
+                        text: "Year and Month",
+                        font: {
+                            size: 14,
+                            weight: "bold",
+                            family: "Montserrat", // Apply Montserrat font to x-axis title
+                        },
+                        color: "#091F2F",
+                    },
+                    ticks: {
+                        font: {
+                            size: 12,
+                            family: "Montserrat", // Apply Montserrat font to x-axis ticks
+                        },
+                        color: "#091F2F",
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Trash Diversion Rate (%)",
+                        font: {
+                            size: 14,
+                            weight: "bold",
+                            family: "Montserrat", // Apply Montserrat font to y-axis title
+                        },
+                        color: "#091F2F",
                     },
                     ticks: {
+                        font: {
+                            size: 12,
+                            family: "Montserrat", // Apply Montserrat font to y-axis ticks
+                        },
+                        color: "#091F2F",
                         callback: value => `${value}%`, // Add % to y-axis ticks
                     },
                 },
