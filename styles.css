@@ -313,6 +313,19 @@ select {
 .diversion-box {
     display: flex;
     gap: 30px;
+    margin: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.diversion-container{
+    max-width: 1500px;
+    padding: 1rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto; /* Center the box on the page */
+    align-items: center;
 }
 
 .plus-symbol {
@@ -325,7 +338,7 @@ select {
 } /* Set the color if needed */
 .grey-box {
     color: #0e1123;
-    width: 330px;
+    width: 685px;
     background-color:#e7e8eb;
     display: flex;
     text-align: center;
@@ -342,6 +355,24 @@ select {
     background-color: #e9d4d3;
 }
 
+.formula h3 {
+    color: #0e1123;
+    font-size: 2rem;
+    margin: 0.2rem 0;
+    text-align: center;
+    font-weight:normal;
+    margin-bottom: 20px;
+}
+
+.diversion-section h3 {
+    color: #0e1123;
+    font-size: 2rem;
+    margin: 0.2rem 0;
+    text-align: center;
+    font-weight:normal;
+    margin-bottom: 20px;
+}
+
 .formula-label {
     width: 80%; /* Limit maximum width */
     background-color:#0e1123;
@@ -354,7 +385,7 @@ select {
     flex-direction: column;
     justify-content: center;
     color: white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 0.25rem;
     font-weight: bold;
     text-align: center;
@@ -785,3 +816,49 @@ img {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
+/*styling for diversion page - 3rd graph*/
+
+.grey-box-monthly {
+    color: #0e1123;
+    width: 500px;
+    background-color:#e7e8eb;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 15px; /* Rounded corners */
+    margin: 0.5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formula .grey-box{
+    background-color: #e9d4d3;
+}
+
+.formula-label {
+    width: 80%; /* Limit maximum width */
+    background-color:#0e1123;
+    display: flex;
+    text-align: center;
+    padding: 0.25rem;
+    border-radius: 15px; /* Rounded corners */
+    margin: 0.25rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#wasteChart {
+    width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
