@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat"
     rel="stylesheet" />
     <link rel="icon" type="image/png" href="icons/favicon.PNG">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>TRASH DIVERSION</title>
 </head>
 <body>
@@ -25,14 +26,12 @@
 
 <div class=diversion-container>
 
- <h2 id="tracker-name"> RESIDENTIAL TRASH DIVERSION </h2>
-
 <div>
 <div class="diversion-box">
  <div>
     <div class="formula">
         <div class="grey-box">
-        <h3 id="highlight-color">WHAT IS TRASH DIVERSION?</h3>
+        <h3 id="tracker-name">WHAT IS TRASH DIVERSION?</h3>
         <h3> Trash diversion refers to the <span id="highlight-bold"> percentage of <br>
             total waste that is diverted from landfills and incinerators </span> <br>
             through recycling, composting, and reuse programs.</h3>
@@ -40,8 +39,8 @@
             <div class="formula-label">
             <p> CALCULATING TRASH DIVERSION RATE </p>
             </div>
-        <h3> Trash diversion is calculated by a simple formula of <br>
-            dividing the volume of <span id="highlight-bold"> recycling and compost</span> <br>
+        <h3> Trash diversion is calculated by a simple formula of dividing <br>
+            the volume of <span id="highlight-bold"> recycling and compost</span>
             over <span id="highlight-bold"> total volume of waste</span>.</h3>
             <!-- Fraction -->
             <div class="fraction">
@@ -86,8 +85,8 @@
 
     <!-- (2) Annual Trend in Diversion Rate  -->
  <div class="diversion-section">
-        <h3 id="highlight-bold">HAS THERE BEEN AN IMPROVEMENT OVER THE YEARS?</h3>
-            <h3> Residential Trash Diversion remains unchanged over the years.</h3>
+        <h3 id="tracker-name">WHERE ARE WE NOW?</h3>
+            <h3> Annual diversion rate remains rather constant at around 15~16%.</h3>
         <div class="grey-box">
             <div class="formula-label">
             <p> ANNUAL TRENDS IN RESIDENTIAL DIVERSION </p>
@@ -96,20 +95,19 @@
             <script src="https://d3js.org/d3.v7.min.js"></script>
             <script src="script.js"></script>
             <p><span id="highlight-bold"> * Note: </span> Years represent fiscal years. <br>
-            Data for 2024 excludes June as it was not <br>
-            available at the time of analysis. </p>
+            Data for 2024 excludes June as it was not available at the time of analysis. </p>
         </div>
   </div>
 </div>
 
     <!-- (3) Monthly Trash Diversion -->
   <div class="diversion-section">
-        <h3>CHECK OUT THE CITY'S RECENT PROGRESS!</h3>
+        <h3 id="tracker-name">NOW CHECK OUT THE PROGRESS, ONE MONTH AT A TIME!</h3>
         <h3>
-            Check out the changes in our Monthly Residential Diversion rate.</h3>
+            Monthly rates have been showing greater fluctuations.<br>Do you notice any <a href="target.html">seasonal effects</a>?</h3>
         <div class="grey-box-monthly">
             <div class="formula-label">
-                <p> COMPARISON OF MONTHLY DIVERSION </p>
+                <p> MONTHLY TRENDS IN RESIDENTIAL DIVERSION </p>
             </div>            
             <div class="graphs">
                 <canvas id="wasteChart"></canvas>
