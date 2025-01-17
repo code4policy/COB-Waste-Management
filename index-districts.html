@@ -12,7 +12,9 @@
 <body>
 
 <header>
+    <a href="index.html">
     <img src="icons/logo-white_red.png" alt="Logo" class="logo">
+    </a>
     <h1>ZERO WASTE BOSTON </h1>
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </header>
@@ -20,27 +22,24 @@
 
 <div id="navigation-bar"></div>
 
-<div class="info-box">
-    <h3>OUR GOAL</h3>
-    <h4>The City of Boston has committed to reduce municipal solid waste generation per capita by at least 15% by 2030 compared to 2015.</h4>
-    <p>How is the city performing?</p>
+<div class="district-box">
+    <h3>The City of Boston has committed to reduce municipal solid waste generation per capita by at least 15% by 2030 compared to 2015.</h3>
+    <h3>How is the city performing?</h3>
     
-    <div class="bar-chart-container">
-    </div>
+    <iframe title="Waste per capita has decreased by 6.6% from 2015" aria-label="Column Chart" id="datawrapper-chart-oGYxj" src="https://datawrapper.dwcdn.net/oGYxj/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="472" data-external="1"></iframe>
 </div> 
 
-<div class="district-box">
-    <h2>Which districts generate the most trash per capita?</h2>
-    <p class="info-text">
-        Annual trash disposal by district (tonns per thousands people)
-    </p>
-    <div class="tooltip"></div>
+<div class="district-box" id="map">
+    <h3>Which districts generate the most trash per person?</h3>
+    <div class="content-container">
+        <iframe title="West Roxbury and Hyde Park have the highest waste per capita" aria-label="Interactive line chart" id="datawrapper-chart-PAdy8" src="https://datawrapper.dwcdn.net/PAdy8/1/" scrolling="no" frameborder="0" style="width: 100%; min-width: 50% !important; border: none;" height="483" data-external="1"></iframe>
+        <img src="data_analysis/boston_trash_tonnage_map.svg" alt="Boston Trash Tonnage Map" class="map-image">
+    </div>
+
 
 </div>
 
 <!-- Scripts -->
-<script src="script-districts.js"></script>
-<script src="per_capita.js"></script>
 <script src="script.js"></script>
 
 </body>

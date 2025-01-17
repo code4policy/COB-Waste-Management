@@ -123,6 +123,22 @@ nav a.active {
     font-weight: bold;
 }
 
+.waste-percapita {
+    background-color: #ffffff; 
+    color: #ffffff; 
+    padding: 2rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    border-color: #D22D23;
+    width: 60%;
+    margin: 2rem auto; /* Center the box on the page */
+}
+
+
+.district-box h3 {
+    color: #091F2F; 
+    font-size: 16px;
+    text-align: center; /* Center text inside the box */
+}
 
 /*For the waste and district box*/
 
@@ -632,7 +648,7 @@ button:hover {
     text-align: center;
     padding: 2rem;
     border-radius: 15px; /* Rounded corners */
-    width: 80%;
+    width: 70%;
     margin: 2rem auto;
     border: 2px solid #091f2f;
     display: flex;
@@ -795,7 +811,7 @@ button:hover {
 
 iframe {
   border: none;
-  width: 600px;
+  width: 100px;
   height: 600px;
 }
 
@@ -816,7 +832,6 @@ img {
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
 /*styling for diversion page - 3rd graph*/
 
 .grey-box-monthly {
@@ -861,4 +876,38 @@ img {
     margin: 0 auto;
     border-radius: 10px;
 }
+/* Targeting the #map box specifically */
+#map {
+    display: flex;
+    flex-direction: column;  /* Stack the title at the top */
+    align-items: center;     /* Center the title horizontally */
+    gap: 20px;  /* Space between the title and the content */
+    margin-top: 20px;
+}
 
+#map h3 {
+    text-align: center;  /* Title is centered */
+    margin: 0;  /* Remove any default margin for h3 */
+}
+
+/* Create a container to hold the graph and map side by side */
+.content-container {
+    display: flex;  /* Flex to keep the graph and map side by side */
+    gap: 20px;  /* Space between the graph and map */
+    justify-content: space-between;  /* Ensure they are aligned side by side */
+    width: 100%;  /* Ensure the container takes up full width */
+    max-width: 1200px;  /* Optional: Restrict the width for large screens */
+}
+
+/* Style for the iframe (Datawrapper chart) */
+.content-container iframe {
+    width: 100%;  /* Take up full width of the container */
+    height: 483px; /* Fixed height for consistency */
+    border: none; /* Remove default iframe border */
+}
+
+/* Style for the SVG image to be placed to the right */
+.map-image {
+    width: 50%;  /* Take up 48% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+}
