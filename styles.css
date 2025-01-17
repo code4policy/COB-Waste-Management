@@ -14,15 +14,20 @@ header {
     color: white;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 header h1 {
-    margin: 0;
+    margin: 0 2rem;
     font-size: 2rem; /* Adjust size to your preference */
-    font-weight: bold;
+    font-weight: normal;
     text-align: center;
     justify-content: center;
+}
+
+header img {
+    margin: 0 2rem;
+    align-items: center;
 }
 
 .navigation {
@@ -31,10 +36,16 @@ header h1 {
     text-align: center;
     display: flex;
     align-items: center;
-    padding: 10px;
     width: 100%;
     justify-content: center;
     font-size: 2rem;
+}
+
+#navigation-bar {
+  background-color: #e7e8eb;
+  margin: 2rem 0;
+  padding: 0.5px;
+  font-weight: bold;
 }
 
 .logo {
@@ -318,6 +329,19 @@ select {
 .diversion-box {
     display: flex;
     gap: 30px;
+    margin: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.diversion-container{
+    max-width: 1500px;
+    padding: 1rem; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto; /* Center the box on the page */
+    align-items: center;
 }
 
 .plus-symbol {
@@ -330,7 +354,7 @@ select {
 } /* Set the color if needed */
 .grey-box {
     color: #0e1123;
-    width: 330px;
+    width: 685px;
     background-color:#e7e8eb;
     display: flex;
     text-align: center;
@@ -347,6 +371,24 @@ select {
     background-color: #e9d4d3;
 }
 
+.formula h3 {
+    color: #0e1123;
+    font-size: 2rem;
+    margin: 0.2rem 0;
+    text-align: center;
+    font-weight:normal;
+    margin-bottom: 20px;
+}
+
+.diversion-section h3 {
+    color: #0e1123;
+    font-size: 2rem;
+    margin: 0.2rem 0;
+    text-align: center;
+    font-weight:normal;
+    margin-bottom: 20px;
+}
+
 .formula-label {
     width: 80%; /* Limit maximum width */
     background-color:#0e1123;
@@ -359,7 +401,7 @@ select {
     flex-direction: column;
     justify-content: center;
     color: white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 0.25rem;
     font-weight: bold;
     text-align: center;
@@ -454,7 +496,7 @@ canvas { /* for the graph */
 
 .goal-intro h2 {
     color: #D22D23; 
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 2rem;
     font-weight: bold;
     text-align: center; /* Center text inside the box */
@@ -462,7 +504,7 @@ canvas { /* for the graph */
 
 .goal-intro h3 {
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0.2rem 0;
     text-align: center;
     font-weight:normal;
@@ -470,7 +512,7 @@ canvas { /* for the graph */
 }
 
 .goal-intro h4 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     margin: 0.25rem 0;
     text-align: center;
     font-weight: bold;
@@ -478,18 +520,21 @@ canvas { /* for the graph */
 
 .goal-intro p{
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin: 0.5rem 0;
     text-align: center;
 }
 
 .notes {
     text-align: center;
+    background-color: #e9d4d3;
+    margin: 3rem 10rem;
+    padding: 2rem;
 }
 
 .notes p {
     color: #091F2F;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0.5rem 0;
 }
 
@@ -504,14 +549,14 @@ canvas { /* for the graph */
 }
 
 .ST-goals .category h2 {
-    font-size: 6rem;
+    font-size: 8rem;
     margin-bottom: 0.1px;
     margin: 1px;
     font-family: 'Alfa Slab One', cursive;
 }
 
 .ST-goals .category p {
-    font-size: 1.35rem;
+    font-size: 2rem;
     color: white; /* Keeps the original text color */
     pointer-events: auto; /* Ensures interactivity is not disabled */
 }
@@ -527,7 +572,7 @@ canvas { /* for the graph */
 
 .ST-goals .divider-line {
     width: 2px; /* Full width of the fraction */
-    height: 150px; /* Thickness of the line */
+    height: 160px; /* Thickness of the line */
     background-color: white; /* Line color */
     margin: 10px 10px; /* Spacing above and below the line */
 }
@@ -787,7 +832,50 @@ img {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+/*styling for diversion page - 3rd graph*/
 
+.grey-box-monthly {
+    color: #0e1123;
+    width: 500px;
+    background-color:#e7e8eb;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 15px; /* Rounded corners */
+    margin: 0.5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formula .grey-box{
+    background-color: #e9d4d3;
+}
+
+.formula-label {
+    width: 80%; /* Limit maximum width */
+    background-color:#0e1123;
+    display: flex;
+    text-align: center;
+    padding: 0.25rem;
+    border-radius: 15px; /* Rounded corners */
+    margin: 0.25rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#wasteChart {
+    width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
 /* Targeting the #map box specifically */
 #map {
     display: flex;
