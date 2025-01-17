@@ -820,6 +820,6 @@ img {
 
 /* Style for the SVG image to be placed to the right */
 .map-image {
-    width: 48%;  /* Take up 48% of the container's width */
+    width: 50%;  /* Take up 48% of the container's width */
     height: auto; /* Maintain aspect ratio */
 }
