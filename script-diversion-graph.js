@@ -29,6 +29,12 @@ async function createChart() {
     const labels = data.map(row => `${row.year}-${String(row.month).padStart(2, "0")}`);
     const diversionRates = data.map(row => row.diversion_rate);
 
+    // Month names for formatting
+    const monthNames = [
+        "Jan.", "Feb.", "Mar.", "Apr.", "May", "June",
+        "July", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."
+    ];
+
     // Chart.js configuration
     const ctx = document.getElementById("wasteChart").getContext("2d");
     new Chart(ctx, {
@@ -91,6 +97,11 @@ async function createChart() {
                             family: "Montserrat", // Apply Montserrat font to x-axis ticks
                         },
                         color: "#091F2F",
+                        callback: function (value, index, ticks) {
+                            const originalLabel = this.getLabelForValue(value); // Get the original label
+                            const [year, month] = originalLabel.split("-");
+                            return `${year}-${monthNames[parseInt(month, 10) - 1]}`; // Convert month to name
+                        },
                     },
                 },
                 y: {
